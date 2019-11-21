@@ -5,7 +5,7 @@ import axios from 'axios';
 class Register extends React.Component {
   state = {
     name: '',
-    username: "",
+    username: '',
     email: '',
     password: '',
     password2: '',
@@ -27,7 +27,7 @@ class Register extends React.Component {
       console.log(res)
       this.setState({
         name: '',
-        username: "",
+        username: '',
         email: '',
         password: '',
         password2: '',

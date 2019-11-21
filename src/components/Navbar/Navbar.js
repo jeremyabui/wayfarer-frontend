@@ -7,7 +7,7 @@ const Navbar = () => {
     <section>
     <nav className="navbar navbar-expand-md navbar-dark bg-dark">
       <div className="container">
-        <Link className="navbar-brand" to="/">Expand at md</Link>
+        <Link className="navbar-brand" to="/">WAYFARER</Link>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -22,6 +22,9 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" data-toggle="modal" data-target="#exampleModal" to='/register'>Register</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/profile">Profile</NavLink>
             </li>
           </ul>
         </div>
