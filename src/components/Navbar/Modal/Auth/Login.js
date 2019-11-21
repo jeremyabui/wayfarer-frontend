@@ -34,7 +34,6 @@ class  Login extends Component {
       <div className="container mt-4">
         <div className="row">
           <div className="col-md-4 offset-md-4">
-            <h4 className="mb-3">Login</h4>
             <form onSubmit={this.handleSubmit}>
               <div className="form-group">
                 <label htmlFor="name">Username</label>
