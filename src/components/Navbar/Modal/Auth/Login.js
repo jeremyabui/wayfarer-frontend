@@ -24,7 +24,10 @@ class  Login extends Component {
     .then((res) => {
       console.log(res)
       this.props.setCurrentUser(res.data.data);
-      this.props.closeModal()
+      // this.props.closeModal()
+      // this.props.history.push('/profile');
+      document.getElementById('exampleModal2').remove('modal')
+      document.getElementsByClassName('modal-backdrop')[0].remove()
       this.props.history.push('/profile');
     })
     .catch((err) => console.log(err));

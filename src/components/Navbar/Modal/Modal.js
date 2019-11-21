@@ -9,11 +9,11 @@ class Modal extends React.Component {
 
   
 
-  closeRegister = () => {
-    this.setState = {
-      closeRegister: true,
-    }
-  }
+  // closeRegister = () => {
+  //   this.setState = {
+  //     closeRegister: true,
+  //   }
+  // }
   
   render() {
     return (
