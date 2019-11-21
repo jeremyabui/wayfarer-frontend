@@ -40,7 +40,6 @@ class Register extends React.Component {
   render() {
     return (
       <>
-        <h4 className="mb-3">Register</h4>
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
             <label htmlFor="name">Name</label>

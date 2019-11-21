@@ -8,6 +8,6 @@ export default ({currentUser, setCurrentUser}) => (
   <Switch>
     <Route exact path='/' component={Home} />
     <Route    path='/register' component={Register} />
-    <Route  path='/Login' render={ () => <Login currentUser={currentUser} setCurrentUser={setCurrentUser} />} />
+    <Route  path='/login' render={ () => <Login currentUser={currentUser} setCurrentUser={setCurrentUser} />} />
   </Switch>
 );
