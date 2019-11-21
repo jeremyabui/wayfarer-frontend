@@ -25,8 +25,8 @@ class App extends Component {
   render () {
     return (
       <>
-        <Navbar />
-        <Routes currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} />
+        < Navbar currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser}/>
+        < Routes currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} />
       </>
     );
   }
