@@ -21,7 +21,6 @@ class Profile extends React.Component {
   // }
 
   render() {
-    console.log(this.props.profile.posts)
     return (
       <div className="container">
         <h2>A SAHHH, {this.props.profile.name}</h2>

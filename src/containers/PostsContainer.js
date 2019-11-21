@@ -5,7 +5,7 @@ import Post from '../components/Post/Post';
 
 class PostsContainer extends React.Component {
   state = {
-    posts: ['bruh', 'are you serious'],
+    posts: [],
   };
 
   componentDidMount() {
@@ -27,7 +27,7 @@ class PostsContainer extends React.Component {
       )
     })
   };
-  
+
   // displayPosts = posts => {
   //   const userId = localStorage.getItem('uid')
   //   if (this.props.profile) {
@@ -45,6 +45,7 @@ class PostsContainer extends React.Component {
   render() {
     return (
       <>
+        {this.displayPosts(this.state.posts)}
       </>
     )
   }

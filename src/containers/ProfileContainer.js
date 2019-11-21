@@ -17,7 +17,6 @@ class ProfileContainer extends React.Component {
       withCredentials: true,
     })
       .then((res) => {
-        console.log(res);
         this.setState({
           profile: res.data.data,
         })
@@ -27,10 +26,10 @@ class ProfileContainer extends React.Component {
 
   render() {
     return (
-      <>
+      <div className="container">
         {this.state.profile && <Profile profile={this.state.profile} />}
         <PostsContainer profile={this.state.profile} />
-      </>
+      </div>
     )
   }
 }
