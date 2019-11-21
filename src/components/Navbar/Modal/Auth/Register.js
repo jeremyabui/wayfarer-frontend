@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import {withRouter} from 'react-router-dom'
 
 
 
@@ -33,7 +34,9 @@ class Register extends React.Component {
         password: '',
         password2: '',
       });
-      this.props.closeRegister()
+      document.getElementById('exampleModal').remove('modal')
+      document.getElementsByClassName('modal-backdrop')[0].remove()
+      this.props.history.push('/login');
     })
     .catch((err) => console.log(err))
   };
@@ -69,4 +72,4 @@ class Register extends React.Component {
   }
 };
 
-export default Register;
+export default withRouter(Register);
