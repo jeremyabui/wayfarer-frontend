@@ -1,10 +1,9 @@
 import React from 'react';
-import Register from '../Navbar/Modal/Auth/Register';
 
 const Home = () => {
   return (
     <section className="home">
-      {/* <Register /> */}
+      <h1>Home</h1>
     </section>
   )
 };
