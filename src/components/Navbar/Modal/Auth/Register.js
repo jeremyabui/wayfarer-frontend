@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 
+
 class Register extends React.Component {
   state = {
     name: '',
@@ -32,7 +33,7 @@ class Register extends React.Component {
         password: '',
         password2: '',
       });
-      this.props.history.push('/login');
+      this.props.closeRegister()
     })
     .catch((err) => console.log(err))
   };
@@ -61,7 +62,7 @@ class Register extends React.Component {
             <label htmlFor="password2">Confirm Password</label>
             <input onChange={this.handleChange} className="form-control form-control-lg" type="password" id="password2" name="password2" value={this.state.password2} />
           </div>
-          <button className="btn btn-primary float-right" type="submit">Register</button>
+          <button className="btn btn-primary float-right" type="submit" >Register</button>
         </form>
       </>
     )
