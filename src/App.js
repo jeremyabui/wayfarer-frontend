@@ -1,12 +1,21 @@
+// External Modules
 import React from 'react';
+import { withRouter } from 'react-router-dom';
+
+// Internal Modules
+import Navbar from './components/Navbar/Navbar';
+
+// CSS
 import './App.css';
+
 
 function App() {
   return (
-    <div className="container">
+    <>
+      <Navbar />
       <h1>IT'S TIME TO SIN</h1>
-    </div>
+    </>
   );
 }
 
-export default App;
+export default withRouter(App);
