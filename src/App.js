@@ -1,7 +1,6 @@
 // External Modules
 import React, {Component} from 'react';
 import { withRouter } from 'react-router-dom';
-import Routes from './config/routes'
 
 // Internal Modules
 import Navbar from './components/Navbar/Navbar';
@@ -14,7 +13,7 @@ import './App.css';
 class App extends Component {
 
   state = {
-    currentUser: localStorage.getItem('uid',)
+    currentUser: localStorage.getItem('uid'),
   };
 
   setCurrentUser = (userId) => {
@@ -26,8 +25,8 @@ class App extends Component {
   render () {
     return (
       <>
-        < Navbar />
-        < Routes currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} />
+        <Navbar />
+        <Routes currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} />
       </>
     );
   }
