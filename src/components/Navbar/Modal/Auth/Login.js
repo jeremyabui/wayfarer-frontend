@@ -3,10 +3,10 @@ import {withRouter} from 'react-router-dom'
 import axios from 'axios';
 
 class  Login extends Component {
-   
+
   state = {
-    username: "",
-    password: "",
+    username: '',
+    password: '',
   };
 
   handleChange = (event) => {
@@ -21,12 +21,12 @@ class  Login extends Component {
     axios.post(`${process.env.REACT_APP_API_URL}/auth/login`, this.state, {
       withCredentials: true,
     })
-     .then((res) => {
-       console.log(res)
-       this.props.setCurrentUser(res.data.data);
-       this.props.history.push('/profile');
-     })
-     .catch((err) => console.log(err));
+    .then((res) => {
+      console.log(res)
+      this.props.setCurrentUser(res.data.data);
+      this.props.history.push('/profile');
+    })
+    .catch((err) => console.log(err));
   }
 
   render () {

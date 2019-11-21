@@ -8,7 +8,7 @@ const Navbar = (props) => {
     <section>
     <nav className="navbar navbar-expand-md navbar-dark bg-dark">
       <div className="container">
-        <Link className="navbar-brand" to="/">Expand at md</Link>
+        <Link className="navbar-brand" to="/">WAYFARER</Link>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -25,6 +25,9 @@ const Navbar = (props) => {
             <NavLink className="nav-link" data-toggle="modal" data-target="#exampleModal2" to="/login">
                Login
             </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/profile">Profile</NavLink>
             </li>
           </ul>
         </div>
@@ -65,22 +68,6 @@ const Navbar = (props) => {
         </div>
       </div>
     </div>
-    
-    {/* <div className="modal fade" id="exampleModalCenter" tabIndex="-1" role="dialog" aria-labelledby="exampleModal" aria-hidden="true">
-      <div className="modal-dialog modal-dialog-centered" role="document">
-        <div className="modal-content">
-          <div className="modal-header">
-            <h5 className="modal-title" id="exampleModal">Login</h5>
-            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div className="modal-body">
-            < Login />
-          </div>
-        </div>
-      </div>
-    </div> */}
     </section>
   )
 };
