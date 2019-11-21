@@ -1,5 +1,5 @@
 // External Modules
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 
 // Internal Modules
@@ -11,7 +11,6 @@ import './App.css';
 
 
 class App extends Component {
-
   state = {
     currentUser: localStorage.getItem('uid'),
   };
@@ -21,15 +20,14 @@ class App extends Component {
     localStorage.setItem('uid', userId);
   };
 
-
   render () {
     return (
       <>
-        < Navbar currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser}/>
-        < Routes currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} />
+        <Navbar currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} />
+        <Routes currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} />
       </>
     );
-  }
-}
+  };
+};
 
 export default withRouter(App);
