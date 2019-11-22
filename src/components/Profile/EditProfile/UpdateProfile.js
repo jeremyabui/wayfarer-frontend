@@ -19,6 +19,7 @@ class UpdateProfile extends React.Component {
   }
 
   handleSubmit = (event) => {
+    console.log('adjfal;dsjflad')
     const data = new FormData() 
     data.append('file', this.state.profilePhoto)
     axios.post(`${process.env.REACT_APP_API_URL}/update/:userId"`, this.state, {
