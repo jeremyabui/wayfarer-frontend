@@ -1,4 +1,5 @@
 import React from 'react';
+import UpdateProfile from '../Profile/EditProfile/UpdateProfile'
 
 const Home = () => {
   return (
