@@ -28,7 +28,7 @@ class CityDetailContainer extends React.Component {
     return (
       <div className="city-detail-container">
         <h2>City Detail</h2>
-        {this.state.loaded && <CityDetail cityDetail={this.state.cityDetail} />}
+        {<CityDetail cityDetail={this.state.cityDetail} />}
       </div>
     );
   }
