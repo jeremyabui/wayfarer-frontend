@@ -5,6 +5,7 @@ import Register from "../components/Navbar/Modal/Auth/Register";
 import Login from "../components/Navbar/Modal/Auth/Login";
 import ProfileContainer from "../containers/ProfileContainer";
 import Cities from "../components/Cities/Cities";
+import PostDetailContainer from '../containers/PostDetailContainer';
 
 export default ({ currentUser, setCurrentUser }) => (
   <Switch>
@@ -15,5 +16,6 @@ export default ({ currentUser, setCurrentUser }) => (
     <Route path='/login' render={() => <Login currentUser={currentUser} setCurrentUser={setCurrentUser} />} />
     <Route path="/profile" component={ProfileContainer} />
     <Route path="/cities" component={Cities} />
+    <Route path="/posts/:id" component={PostDetailContainer} />
   </Switch>
 );

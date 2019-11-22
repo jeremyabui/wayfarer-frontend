@@ -9,8 +9,7 @@ class Profile extends React.Component {
     return (
       <div className="container">
         <h2>A SAHHH, {this.props.profile.name}</h2>
-        <h3>YOUR POSTS</h3>
-        {/* <p>{this.props.profile.posts[0].title}</p> */}
+        <p></p>
       </div>
     )
   }
