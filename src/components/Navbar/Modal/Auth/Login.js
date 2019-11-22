@@ -42,7 +42,7 @@ class  Login extends Component {
             <form onSubmit={this.handleSubmit}>
               <div className="form-group">
                 <label htmlFor="name">Username</label>
-                <input onChange={this.handleChange} className="form-control form-control-lg" type="text" id="username" name="username" />
+                <input onChange={this.handleChange} className="form-control form-control-lg" type="text" id="userName" name="username" />
               </div>
               <div className="form-group">
                 <label htmlFor="password">Password</label>
