@@ -12,6 +12,6 @@ export default ({currentUser, setCurrentUser}) => (
     <Route path='/login' render={ () => <Login currentUser={currentUser} setCurrentUser={setCurrentUser} />} />
     <Route path='/register' component={Register} />
     <Route path='/login' render={() => <Login currentUser={currentUser} setCurrentUser={setCurrentUser} />} />
-    <Route path='/profile' component={ProfileContainer} />
+    <Route path='/profile' render={() => <ProfileContainer currentUser={currentUser} />} />
   </Switch>
 );
