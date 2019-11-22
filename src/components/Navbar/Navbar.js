@@ -29,6 +29,9 @@ class Navbar  extends Component {
                 <li className="nav-item">
                   <NavLink className="nav-link" to="/profile">Profile</NavLink>
                 </li>
+                <li className="nav-item">
+                  <NavLink onClick={this.props.logout} className="nav-link" to="/">Logout</NavLink>
+                </li>
               </ul>
               < Modal currentUser={this.props.currentUser} setCurrentUser={this.props.setCurrentUser}/>
             </div>
