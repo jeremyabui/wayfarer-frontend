@@ -8,7 +8,6 @@ import ProfileContainer from "../containers/ProfileContainer";
 import PostDetailContainer from '../containers/PostDetailContainer';
 import CitiesContainer from "../containers/CitiesContainer";
 import CityDetailContainer from "../containers/CityDetailContainer";
-import PostDetailContainer from "../containers/PostDetailContainer";
 
 export default ({ currentUser, setCurrentUser }) => (
   <Switch>
