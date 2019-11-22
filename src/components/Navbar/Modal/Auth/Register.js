@@ -34,7 +34,6 @@ class Register extends React.Component {
         password: '',
         password2: '',
       });
-      // document.getElementById('exampleModal').remove('modal')
       document.getElementById('exampleModal').style.display = 'none';
       document.getElementsByClassName('modal-backdrop')[0].remove()
       this.props.history.push('/login');
