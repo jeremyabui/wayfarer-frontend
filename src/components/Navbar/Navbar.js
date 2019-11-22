@@ -20,18 +20,26 @@ class Navbar  extends Component {
                 <li className="nav-item">
                   <NavLink className="nav-link" exact to="/">Home</NavLink>
                 </li>
-                <li className="nav-item">
-                  <NavLink id="register" className="nav-link" data-toggle="modal" data-target="#exampleModal" to='/register'>Register</NavLink>
-                </li>
-                <li>
-                <NavLink id="login" className="nav-link" data-toggle="modal" data-target="#exampleModal2" to="/login">Login</NavLink>
-                </li>
-                <li className="nav-item">
-                  <NavLink className="nav-link" to="/profile">Profile</NavLink>
-                </li>
-                <li className="nav-item">
-                  <NavLink onClick={this.props.logout} className="nav-link" to="/">Logout</NavLink>
-                </li>
+
+               {!this.props.currentUser ? 
+               <>
+                  <li className="nav-item">
+                    <NavLink id="register" className="nav-link" data-toggle="modal" data-target="#exampleModal" to='/register'>Register</NavLink>
+                  </li>
+                  <li>
+                  <NavLink id="login" className="nav-link" data-toggle="modal" data-target="#exampleModal2" to="/login">Login</NavLink>
+                  </li>
+                </> : 
+                 <>
+                    <li className="nav-item">
+                      <NavLink className="nav-link" to="/profile">Profile</NavLink>
+                    </li>
+                    <li className="nav-item">
+                      <NavLink onClick={this.props.logout} className="nav-link" to="/">Logout</NavLink>
+                    </li>
+                  </>
+                }
+
               </ul>
               < Modal currentUser={this.props.currentUser} setCurrentUser={this.props.setCurrentUser}/>
             </div>
