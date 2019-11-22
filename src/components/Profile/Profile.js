@@ -5,23 +5,7 @@ class Profile extends React.Component {
     profilePosts: [],
   };
 
-  // componentDidMount = () => {
-  //   let profilePosts = [];
-  //   this.props.profile.posts.forEach((post) => {
-  //     profilePosts.push(post);
-  //   })
-  //   this.setState({
-  //     profilePosts: profilePosts,
-  //   });
-  // };
-
-  // getProfilePosts = () => {
-
-  //   })
-  // }
-
   render() {
-    console.log(this.props.profile.posts)
     return (
       <div className="container">
         <h2>A SAHHH, {this.props.profile.name}</h2>

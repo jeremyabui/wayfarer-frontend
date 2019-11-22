@@ -8,21 +8,11 @@ import Cities from "../components/Cities/Cities";
 
 export default ({ currentUser, setCurrentUser }) => (
   <Switch>
-    <Route exact path="/" component={Home} />
-    <Route path="/register" component={Register} />
-    <Route
-      path="/login"
-      render={() => (
-        <Login currentUser={currentUser} setCurrentUser={setCurrentUser} />
-      )}
-    />
-    <Route path="/register" component={Register} />
-    <Route
-      path="/login"
-      render={() => (
-        <Login currentUser={currentUser} setCurrentUser={setCurrentUser} />
-      )}
-    />
+    <Route exact path='/' component={Home} />
+    <Route path='/register' component={Register} />
+    <Route path='/login' render={() => <Login currentUser={currentUser} setCurrentUser={setCurrentUser} />} />
+    <Route path='/register' component={Register} />
+    <Route path='/login' render={() => <Login currentUser={currentUser} setCurrentUser={setCurrentUser} />} />
     <Route path="/profile" component={ProfileContainer} />
     <Route path="/cities" component={Cities} />
   </Switch>
