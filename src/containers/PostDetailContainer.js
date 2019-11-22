@@ -6,6 +6,7 @@ import PostDetail from '../components/PostDetail/PostDetail.js';
 class PostDetailContainer extends React.Component {
   state = {
     postDetail: '',
+    loaded: false,
   };
 
   componentDidMount() {
@@ -14,7 +15,8 @@ class PostDetailContainer extends React.Component {
       .then((res) => {
         console.log(res);
         this.setState({
-          postDetail: res.data.data
+          postDetail: res.data.data,
+          loaded: true,
         })
         console.log(this.state.postDetail);
       })
@@ -25,7 +27,8 @@ class PostDetailContainer extends React.Component {
     
     return (
       <div className="container">
-        <PostDetail postDetail={this.state.postDetail} />
+        <h2>POST DETAIL</h2>
+        {this.state.loaded && <PostDetail postDetail={this.state.postDetail} /> }
       </div>
     ) 
   }
