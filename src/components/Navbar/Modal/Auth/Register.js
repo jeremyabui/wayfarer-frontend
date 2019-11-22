@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from 'axios';
+import {withRouter} from 'react-router-dom'
+
 
 
 class Register extends React.Component {
@@ -32,6 +34,9 @@ class Register extends React.Component {
         password: '',
         password2: '',
       });
+      // document.getElementById('exampleModal').remove('modal')
+      document.getElementById('exampleModal').style.display = 'none';
+      document.getElementsByClassName('modal-backdrop')[0].remove()
       this.props.history.push('/login');
     })
     .catch((err) => console.log(err))
@@ -61,11 +66,11 @@ class Register extends React.Component {
             <label htmlFor="password2">Confirm Password</label>
             <input onChange={this.handleChange} className="form-control form-control-lg" type="password" id="password2" name="password2" value={this.state.password2} />
           </div>
-          <button className="btn btn-primary float-right" type="submit">Register</button>
+          <button className="btn btn-primary float-right" type="submit" >Register</button>
         </form>
       </>
     )
   }
 };
 
-export default Register;
+export default withRouter(Register);
