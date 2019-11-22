@@ -1,8 +1,9 @@
-import React, { Component } from "react";
-import City from "./City/City";
-import api from "./cities.json";
+import React from "react";
 
-class Cities extends Component {
+import City from "../components/Cities/City/City";
+import api from "../components/Cities/cities.json";
+
+class CitiesContainer extends React.Component {
   state = {
     cities: api
   };
@@ -26,12 +27,5 @@ class Cities extends Component {
     );
   }
 }
-// const Cities = () => {
-//   return (
-//     <section className="home">
-//       <h1>Cities</h1>
-//     </section>
-//   );
-// };
 
-export default Cities;
+export default CitiesContainer;

@@ -1,17 +1,17 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class City extends React.Component {
-  state = {
-    name: this.props.cityData.name
-  };
-
   render() {
+    let link = `${this.props.cityData.id}`;
     const { cityData } = this.props;
     return (
       <div className="city-div">
-        <h1>{cityData.name}</h1>
-        <p>{cityData.description}</p>
-        <img height="300px" width="500px" src={cityData.photo} />
+        <Link to={link}>
+          <h1>{cityData.name}</h1>
+          <p>{cityData.description}</p>
+          <img alt="city" height="300px" width="500px" src={cityData.photo} />
+        </Link>
       </div>
     );
   }
