@@ -28,8 +28,8 @@ class ProfileContainer extends React.Component {
   render() {
     return (
       <div className="container">
-        {this.state.loaded && <Profile profile={this.state.profile} posts={this.state.profile.posts} />}
-        {this.state.loaded && <PostsContainer profile={this.state.profile} posts={this.state.profile.posts} /> }
+        {this.state.loaded && <Profile profile={this.state.profile} />}
+        {this.state.loaded && <PostsContainer posts={this.state.profile.posts} /> }
       </div>
     )
   }
