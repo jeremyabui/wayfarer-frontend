@@ -8,6 +8,7 @@ const Profile = (props) => {
     return (
       <div className="container">
         <h2>A SAHHH, {props.profile.name}</h2>
+        <img className="profile-page-photo" src={props.profile.profilePhoto} alt={props.profile.name + `'s profile picture`}/>
         <h5>Current City: {props.profile.currentCity}</h5>
         <h6>Date Joined: {dateJoined}</h6>
 
