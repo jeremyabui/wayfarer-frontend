@@ -24,7 +24,7 @@ class Navbar  extends Component {
                   <NavLink id="register" className="nav-link" data-toggle="modal" data-target="#exampleModal" to='/register'>Register</NavLink>
                 </li>
                 <li>
-                <NavLink id="login" className="nav-link" data-toggle="modal" data-target="#exampleModal2" to="/login" onClick={this.openLogin}>Login</NavLink>
+                <NavLink id="login" className="nav-link" data-toggle="modal" data-target="#exampleModal2" to="/login">Login</NavLink>
                 </li>
                 <li className="nav-item">
                   <NavLink className="nav-link" to="/profile">Profile</NavLink>
