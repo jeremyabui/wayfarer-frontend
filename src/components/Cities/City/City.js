@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 class City extends React.Component {
   render() {
-    let link = `${this.props.cityData.id}`;
+    let link = `${this.props.cityData._id}`;
     const { cityData } = this.props;
     return (
       <div className="city-div">
