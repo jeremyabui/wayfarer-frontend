@@ -21,8 +21,8 @@ class Navbar  extends Component {
                   <NavLink className="nav-link" exact to="/">Home</NavLink>
                 </li>
 
-               {!this.props.currentUser ? 
-               <>
+                {!this.props.currentUser ? 
+                <>
                   <li className="nav-item">
                     <NavLink id="register" className="nav-link" data-toggle="modal" data-target="#exampleModal" to='/register'>Register</NavLink>
                   </li>
@@ -30,7 +30,7 @@ class Navbar  extends Component {
                   <NavLink id="login" className="nav-link" data-toggle="modal" data-target="#exampleModal2" to="/login">Login</NavLink>
                   </li>
                 </> : 
-                 <>
+                  <>
                     <li className="nav-item">
                       <NavLink className="nav-link" to="/profile">Profile</NavLink>
                     </li>
@@ -41,7 +41,7 @@ class Navbar  extends Component {
                 }
 
               </ul>
-              < Modal currentUser={this.props.currentUser} setCurrentUser={this.props.setCurrentUser}/>
+              <Modal currentUser={this.props.currentUser} setCurrentUser={this.props.setCurrentUser}/>
             </div>
           </div>
         </nav>
