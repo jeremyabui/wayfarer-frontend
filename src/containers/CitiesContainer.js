@@ -2,6 +2,7 @@ import React from "react";
 import City from "../components/Cities/City/City";
 import axios from "axios";
 import { tsExternalModuleReference } from "@babel/types";
+
 class CitiesContainer extends React.Component {
   state = {
     citiesData: [],
@@ -45,3 +46,4 @@ class CitiesContainer extends React.Component {
   }
 }
 export default CitiesContainer;
+
