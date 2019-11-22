@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 
 import Post from '../components/Post/Post';
 
@@ -10,9 +10,9 @@ class PostsContainer extends React.Component {
   };
 
   displayPosts = (posts) => {
-    return posts.map((index) => {
+    return posts.map((post) => {
       return (
-        <Post key={index.id} postData={index} />
+        <Post key={post._id} postData={post} />
       )
     })
   };
