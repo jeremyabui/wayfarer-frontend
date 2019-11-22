@@ -19,26 +19,25 @@ class Register extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    console.log(this.state);
-    axios
-      .post(`${process.env.REACT_APP_API_URL}/auth/register`, this.state, {
-        withCredentials: true
-      })
-      .then(res => {
-        console.log(res);
-        this.setState({
-          name: "",
-          username: "",
-          email: "",
-          password: "",
-          password2: ""
-        });
-        // document.getElementById('exampleModal').remove('modal')
-        document.getElementById("exampleModal").style.display = "none";
-        document.getElementsByClassName("modal-backdrop")[0].remove();
-        this.props.history.push("/login");
-      })
-      .catch(err => console.log(err));
+    console.log(this.state)
+    axios.post(`${process.env.REACT_APP_API_URL}/auth/register`, this.state, {
+      withCredentials: true,
+    })
+    .then((res) => {
+      console.log(res)
+      this.setState({
+        name: '',
+        username: '',
+        email: '',
+        password: '',
+        password2: '',
+      });
+      document.getElementById('exampleModal').style.display = 'none';
+      document.getElementsByClassName('modal-backdrop')[0].remove()
+      this.props.history.push('/login');
+    })
+    .catch((err) => console.log(err))
+
   };
 
   render() {
