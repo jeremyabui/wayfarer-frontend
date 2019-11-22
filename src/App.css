@@ -1,0 +1,11 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* PROFILE PAGE */
+.profile-page-photo {
+  width: 200px;
+  height: 200px;
+}
