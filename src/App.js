@@ -8,6 +8,7 @@ import Routes from './config/routes';
 
 // CSS
 import './App.css';
+import axios from 'axios';
 
 
 class App extends Component {
@@ -20,10 +21,20 @@ class App extends Component {
     localStorage.setItem('uid', userId);
   };
 
+  logout = () => {
+    localStorage.removeItem('uid');
+    axios.delete(`${process.env.REACT_APP_API_URL}/auth/logout`, { withCredentials: true })
+      .then(res => {
+        console.log(res);
+        this.setState({ currentUser: null });
+        this.props.history.push('/');
+      })
+      .catch(err => console.log(err));
+  }
   render () {
     return (
       <>
-        <Navbar currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} />
+        <Navbar currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} logout={this.logout}/>
         <Routes currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} />
       </>
     );
