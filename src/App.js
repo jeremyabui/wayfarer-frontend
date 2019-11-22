@@ -27,10 +27,12 @@ class App extends Component {
       .then(res => {
         console.log(res);
         this.setState({ currentUser: null });
-        this.props.history.push('/');
+        localStorage.removeItem('uid');
+        this.props.history.push('/login');
       })
       .catch(err => console.log(err));
   }
+  
   render () {
     return (
       <>
