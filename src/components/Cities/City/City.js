@@ -6,13 +6,9 @@ class City extends React.Component {
     let link = `${this.props.cityData.id}`;
     const { cityData } = this.props;
     return (
-      <div className="city-div">
-        <Link to={link}>
-          <h1>{cityData.name}</h1>
-          <p>{cityData.description}</p>
-          <img alt="city" height="300px" width="500px" src={cityData.photo} />
-        </Link>
-      </div>
+      <>
+          <div onClick={this.props.setCurrentCity} key={this.props.cityData.id} id={this.props.cityData.id}>{cityData.name}</div>
+      </>
     );
   }
 }
