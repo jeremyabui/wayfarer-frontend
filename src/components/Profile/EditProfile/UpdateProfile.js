@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import {withRouter} from 'react-router-dom'
 
 
 
@@ -23,8 +24,8 @@ class UpdateProfile extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault()
     const userId = localStorage.getItem('uid')
-    // const data = new FormData() 
-    // data.append('file', this.state.profilePhoto)
+    const data = new FormData() 
+    data.append('file', this.state.profilePhoto)
     axios.put(`${process.env.REACT_APP_API_URL}/auth/update/${userId}`, this.state, {
       withCredentials: true,
     })
@@ -35,6 +36,10 @@ class UpdateProfile extends React.Component {
         username: '',
         currentCity: '',
       })
+      // const userId = localStorage.getItem('uid')
+      document.getElementById('exampleModalPro').style.display = 'none';
+      document.getElementsByClassName('modal-backdrop')[0].remove()
+      window.location.reload()
     })
     .catch((err) => console.log(err))
 }
@@ -67,4 +72,4 @@ class UpdateProfile extends React.Component {
   }
 };
 
-export default UpdateProfile;
+export default withRouter(UpdateProfile);
