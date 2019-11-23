@@ -15,7 +15,7 @@ class UpdateProfile extends React.Component {
   handleChange = (event) => {
     // console.log(event.target.files[0])
     this.setState({
-     [event.target.name]: event.target.value,
+    [event.target.name]: event.target.value,
       // profilePhoto: event.target.files[0],
       // loaded: 0,
     })
