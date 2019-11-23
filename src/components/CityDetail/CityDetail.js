@@ -5,7 +5,9 @@ const CityDetail = props => {
     <>
       <h1 className="city-detail-name">{props.cityDetails.name}</h1>
       <p className="city-detail-description">{props.cityDetails.description}</p>
-      <img src={props.cityDetails.photo} alt={props.cityDetails.name}/>
+      <div className="city-detail-image">
+        <img src={props.cityDetails.photo} alt={props.cityDetails.name}/>
+      </div>
     </>
   );
 };

@@ -2,11 +2,13 @@ import React from "react";
 import axios from "axios";
 
 import CityDetail from "../components/CityDetail/CityDetail";
+import PostsContainer from './PostsContainer';
 
 class CityDetailContainer extends React.Component {
   state = {
     cityDetails: "",
     loaded: false,
+    posts: [],
   };
 
   componentDidUpdate() {
@@ -15,7 +17,8 @@ class CityDetailContainer extends React.Component {
     })
       .then((res) => {
         this.setState({
-          cityDetails: res.data.data
+          cityDetails: res.data.data,
+          loaded: true,
         })
       })
       .catch((err) => console.log(err));
@@ -23,9 +26,10 @@ class CityDetailContainer extends React.Component {
 
   render() {
     return (
-      <div className="city-detail-container">
+      <section className="city-detail-container">
         <CityDetail cityDetails={this.state.cityDetails} />
-      </div>
+        {/* {this.state.loaded && <PostsContainer posts={this.props.cityDetails.posts} /> } */}
+      </section>
     );
   }
 }

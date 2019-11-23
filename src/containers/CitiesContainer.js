@@ -39,11 +39,12 @@ class CitiesContainer extends React.Component {
 
   render() {
     return (
-      <>
-        <h1>Citiessssss</h1>
-        {this.displayCities(this.state.citiesData)}
+      <section className="cities-container container">
+        <div className="city-list">
+          {this.displayCities(this.state.citiesData)}
+        </div>
         <CityDetailContainer selectedCity={this.state.selectedCity} />
-      </>
+      </section>
     );
   }
 }
