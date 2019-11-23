@@ -1,31 +1,52 @@
 import React from "react";
-
 import City from "../components/Cities/City/City";
-import api from "../components/Cities/cities.json";
+import CityDetailContainer from '../containers/CityDetailContainer';
+import axios from "axios";
 
 class CitiesContainer extends React.Component {
   state = {
-    cities: api
+    citiesData: [],
+    selectedCity: '',
+    loaded: false,
+  };
+
+  setCurrentCity = (event) => {
+    this.setState({ 
+      selectedCity: event.target.id,
+    })
+  };
+
+  componentDidMount() {
+    axios.get(`${process.env.REACT_APP_API_URL}/cities`, { withCredentials: true })
+      .then((res) => {
+        this.setState({
+          citiesData: res.data.data,
+          loaded: true,
+        })
+      })
+      .catch((err) => console.log(err));
   };
 
   displayCities = cities => {
     return cities.map(city => {
       return (
-        <div className="city-container">
-          <City cityData={city} />
-        </div>
+        <>
+          <City setCurrentCity={this.setCurrentCity} cityData={city} key={city._id} />
+        </>
       );
     });
   };
 
   render() {
     return (
-      <section>
-        <h1>Citiessssss</h1>
-        <div>{this.displayCities(this.state.cities)}</div>
+      <section className="cities-container container">
+        <div className="city-list">
+          {this.displayCities(this.state.citiesData)}
+        </div>
+        <CityDetailContainer selectedCity={this.state.selectedCity} />
       </section>
     );
   }
 }
-
 export default CitiesContainer;
+

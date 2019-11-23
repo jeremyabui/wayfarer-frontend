@@ -2,34 +2,34 @@ import React from "react";
 import axios from "axios";
 
 import CityDetail from "../components/CityDetail/CityDetail";
+import PostsContainer from './PostsContainer';
 
 class CityDetailContainer extends React.Component {
   state = {
-    cityDetail: "",
-    loaded: false
+    cityDetails: "",
+    loaded: false,
+    posts: [],
   };
 
-  componentDidMount() {
-    const cityId = document.location.href.split("/")[4];
-    axios
-      .get(`${process.env.REACT_APP_API_URL}/cities/${cityId}`)
-      .then(res => {
-        console.log(res);
+  componentDidUpdate() {
+    axios.get(`${process.env.REACT_APP_API_URL}/cities/${this.props.selectedCity}`, {
+      withCredentials: true 
+    })
+      .then((res) => {
         this.setState({
-          cityDetail: res.data.data,
-          loaded: true
-        });
-        console.log(this.state.cityDetail);
+          cityDetails: res.data.data,
+          loaded: true,
+        })
       })
-      .catch(err => console.log(err));
+      .catch((err) => console.log(err));
   }
 
   render() {
     return (
-      <div className="city-detail-container">
-        <h2>City Detail</h2>
-        {<CityDetail cityDetail={this.state.cityDetail} />}
-      </div>
+      <section className="city-detail-container">
+        <CityDetail cityDetails={this.state.cityDetails} />
+        {/* {this.state.loaded && <PostsContainer posts={this.props.cityDetails.posts} /> } */}
+      </section>
     );
   }
 }
