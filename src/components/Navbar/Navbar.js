@@ -7,7 +7,7 @@ class Navbar  extends Component {
 
   render () {
     return (
-      <section>
+      <header>
         <nav className="navbar navbar-expand-md navbar-dark bg-dark">
           <div className="container">
             <Link className="navbar-brand" to="/">WAYFARER</Link>
@@ -20,21 +20,33 @@ class Navbar  extends Component {
                 <li className="nav-item">
                   <NavLink className="nav-link" exact to="/">Home</NavLink>
                 </li>
-                <li className="nav-item">
-                  <NavLink id="register" className="nav-link" data-toggle="modal" data-target="#exampleModal" to='/register'>Register</NavLink>
-                </li>
-                <li>
-                <NavLink id="login" className="nav-link" data-toggle="modal" data-target="#exampleModal2" to="/login" onClick={this.openLogin}>Login</NavLink>
-                </li>
-                <li className="nav-item">
-                  <NavLink className="nav-link" to="/profile">Profile</NavLink>
-                </li>
+
+                {!this.props.currentUser ? 
+                <>
+                  <li className="nav-item">
+                    <NavLink id="register" className="nav-link" data-toggle="modal" data-target="#exampleModal" to='/register'>Register</NavLink>
+                  </li>
+                  <li>
+                  <NavLink id="login" className="nav-link" data-toggle="modal" data-target="#exampleModal2" to="/login">Login</NavLink>
+                  </li>
+                </> : 
+                  <>
+                    <li className="nav-item">
+                      <NavLink className="nav-link" to="/profile">Profile</NavLink>
+                    </li>
+                    <li className="nav-item">
+                      <NavLink onClick={this.props.logout} className="nav-link" to="/">Logout</NavLink>
+                    </li>
+                  </>
+                }
+
               </ul>
-              < Modal currentUser={this.props.currentUser} setCurrentUser={this.props.setCurrentUser}/>
+              <Modal currentUser={this.props.currentUser} setCurrentUser={this.props.setCurrentUser}/>
             </div>
           </div>
         </nav>
-      </section>
+  
+      </header>
     );
   };
 };
