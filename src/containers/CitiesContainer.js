@@ -1,5 +1,6 @@
 import React from "react";
 import City from "../components/Cities/City/City";
+import CityDetailContainer from '../containers/CityDetailContainer';
 import axios from "axios";
 
 class CitiesContainer extends React.Component {
@@ -8,13 +9,13 @@ class CitiesContainer extends React.Component {
     selectedCity: '',
     loaded: false,
   };
+
   setCurrentCity = (event) => {
     this.setState({ 
       selectedCity: event.target.id,
-      loaded: false,
     })
-    console.log(event.target.id);
   };
+
   componentDidMount() {
     axios.get(`${process.env.REACT_APP_API_URL}/cities`, { withCredentials: true })
       .then((res) => {
@@ -25,22 +26,24 @@ class CitiesContainer extends React.Component {
       })
       .catch((err) => console.log(err));
   };
+
   displayCities = cities => {
     return cities.map(city => {
-      // console.log(city._id);
       return (
         <>
-          <City setCurrentCity={this.setCurrentCity} cityData={city} key={city._id}/>
+          <City setCurrentCity={this.setCurrentCity} cityData={city} key={city._id} />
         </>
       );
     });
   };
+
   render() {
     return (
-      <section>
+      <>
         <h1>Citiessssss</h1>
-        <div>{this.displayCities(this.state.citiesData)}</div>
-      </section>
+        {this.displayCities(this.state.citiesData)}
+        <CityDetailContainer selectedCity={this.state.selectedCity} />
+      </>
     );
   }
 }
