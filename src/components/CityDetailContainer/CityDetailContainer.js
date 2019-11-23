@@ -1,8 +1,8 @@
 import React from "react";
 import axios from "axios";
 
-import CityDetail from "../components/CityDetail/CityDetail";
-import PostsContainer from './PostsContainer';
+import CityDetail from "./CityDetail/CityDetail";
+import PostsContainer from '../PostsContainer/PostsContainer';
 
 class CityDetailContainer extends React.Component {
   state = {
@@ -28,7 +28,7 @@ class CityDetailContainer extends React.Component {
     return (
       <section className="city-detail-container">
         <CityDetail cityDetails={this.state.cityDetails} />
-        {/* {this.state.loaded && <PostsContainer posts={this.props.cityDetails.posts} /> } */}
+        {/* <PostsContainer /> */}
       </section>
     );
   }

@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-import PostDetail from '../components/PostDetail/PostDetail.js';
+import PostDetail from './PostDetail/PostDetail.js';
 
 class PostDetailContainer extends React.Component {
   state = {

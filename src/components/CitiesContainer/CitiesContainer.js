@@ -1,6 +1,6 @@
 import React from "react";
-import City from "../components/Cities/City/City";
-import CityDetailContainer from '../containers/CityDetailContainer';
+import City from "./City/City";
+import CityDetailContainer from '../CityDetailContainer/CityDetailContainer';
 import axios from "axios";
 
 class CitiesContainer extends React.Component {

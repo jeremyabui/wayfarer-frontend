@@ -1,5 +1,5 @@
 import React from 'react';
-import UpdateProfile from '../Profile/EditProfile/UpdateProfile';
+import UpdateProfile from './EditProfile/UpdateProfile';
 
 const Profile = (props) => {
     console.log(props.profile);
