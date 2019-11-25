@@ -39,7 +39,7 @@ class UpdateProfile extends React.Component {
             <label htmlFor="profilePhoto">Profile Photo</label>
             <input onChange={this.handleChange} className="form-control form-control-lg" type="file" id="profilePhoto" name="profilePhoto"/>
           </div> */}
-          <button type="submit" className="btn btn-success m-l">save</button> 
+          <button type="submit" className="btn btn-success float-right">save</button> 
         </form>
       </div>
     )

@@ -34,6 +34,9 @@ class PostsContainer extends React.Component {
     axios.delete(`${process.env.REACT_APP_API_URL}/posts/deletePost/${postId}`, deletedPost, { withCredentials: true })
     .then((res) => {
       console.log(res)
+      document.getElementById('deletePostModal').style.display = 'none';
+      document.getElementsByClassName('modal-backdrop')[0].remove()
+      this.props.history.push('/cities');
     })
     .catch((err) => console.log(err));
   }
