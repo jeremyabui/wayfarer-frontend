@@ -28,7 +28,7 @@ class City extends React.Component {
           id={`${this.props.cityData._id}`}
           onClick={this.props.setCurrentCity}
         >
-          {cityData.name}
+          {/* {cityData.name} */}
         </h3>
       </>
     );
