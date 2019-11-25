@@ -1,7 +1,6 @@
 import React from "react";
 import axios from "axios";
-import img1 from "./assets/img1.jpg";
-import video1 from "./assets/video.mp4";
+import video2 from "./assets/video2.mp4";
 
 import Profile from "./Profile/Profile";
 import PostsContainer from "../PostsContainer/PostsContainer";
@@ -67,7 +66,7 @@ class ProfileContainer extends React.Component {
           className="profile-img-background"
           autoPlay={true}
           loop={true}
-          src={video1}
+          src={video2}
         ></video>
         {/* <img className="profile-img-background" src={img1} /> */}
         <div className="profile-container">
