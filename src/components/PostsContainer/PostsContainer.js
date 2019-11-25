@@ -1,7 +1,7 @@
 import React from 'react';
 // import axios from 'axios';
 
-import Post from '../components/Post/Post';
+import Post from './Post/Post';
 
 class PostsContainer extends React.Component {
   state = {

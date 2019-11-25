@@ -3,11 +3,11 @@ import { Switch, Route } from "react-router-dom";
 import Home from "../components/Home/Home";
 import Register from "../components/Navbar/Modal/Auth/Register";
 import Login from "../components/Navbar/Modal/Auth/Login";
-import ProfileContainer from "../containers/ProfileContainer";
+import ProfileContainer from "../components/ProfileContainer/ProfileContainer";
 // import UpdateProfile from "../components/Profile/EditProfile/UpdateProfile";
-import PostDetailContainer from '../containers/PostDetailContainer';
-import CitiesContainer from "../containers/CitiesContainer";
-import CityDetailContainer from "../containers/CityDetailContainer";
+import PostDetailContainer from '../components/PostDetailContainer/PostDetailContainer';
+import CitiesContainer from "../components/CitiesContainer/CitiesContainer";
+import CityDetailContainer from "../components/CitiesContainer/CityDetailContainer/CityDetailContainer";
 
 export default ({ currentUser, setCurrentUser }) => (
   <Switch>
