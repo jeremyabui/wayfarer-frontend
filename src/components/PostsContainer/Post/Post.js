@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import EditPost from './EditPost/EditPost'
-
 import "../../Profile/Profile.css";
+
 
 
 const Post = props => {
