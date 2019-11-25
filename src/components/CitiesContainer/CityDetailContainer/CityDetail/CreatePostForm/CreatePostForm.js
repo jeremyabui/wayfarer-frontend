@@ -53,7 +53,7 @@ class CreatePostForm extends React.Component {
               </button>
               </div>
               <div className="modal-body"></div>
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={(event) => this.handleSubmit(event, this.state)}>
                   <div className="form-group">
                     <label htmlFor="title">Title</label>
                     <input
