@@ -7,7 +7,7 @@ import axios from 'axios';
 class PostsContainer extends React.Component {
   state = {
     loaded: false,
-    posts: [],
+    posts: [...this.props.posts],
   };
 
   handlePostEdit = (event, updatedPost) => {
@@ -17,12 +17,26 @@ class PostsContainer extends React.Component {
     )
       .then((res) => {
         console.log(res)
+        const filtered = this.state.posts.filter(post => {
+          if(post._id !== res.data.data._id) {
+            return post
+          }
+        })
         this.setState({
-          posts: this.props.posts
+          posts: [res.data.data,...filtered]
         })
       })
       .catch((err) => console.log(err));
   };
+
+  // componentDidUpdate(prevProps) {
+  //   console.log(prevProps.posts)
+  //   if (prevProps.posts !== this.state.posts) {
+  //     this.setState({
+  //       posts: this.state.posts
+  //     })
+  //   }
+  // }
 
   displayPosts = (posts) => {
     return posts.map((post) => {
@@ -33,9 +47,10 @@ class PostsContainer extends React.Component {
   };
 
   render() {
+    console.log(this.props.posts)
     return (
       <>
-        {this.displayPosts(this.props.posts)}
+        {this.displayPosts(this.state.posts)}
       </>
     )
   }
