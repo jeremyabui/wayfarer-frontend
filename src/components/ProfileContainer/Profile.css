@@ -1,17 +1,17 @@
 .profile-container {
   display: flex;
   justify-content: space-between;
-  color: white;
-  padding: 6%;
+  
+  padding: 6%; 
   /* background: rgb(182, 221, 255); */
-}
+} 
 
 .profile-img-background {
   max-width: 100%;
   min-width: 100%;
   min-width: 100%;
   position: absolute;
-  z-index: -1;
+  z-index: -1; 
   /* opacity: 0.8; */
 }
 
@@ -20,7 +20,8 @@
   flex-direction: column;
   padding: 2%;
   position: fixed;
-}
+  color: white;
+} 
 
 .profile-posts-content {
   margin: 50px;
