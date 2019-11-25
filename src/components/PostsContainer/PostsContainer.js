@@ -7,7 +7,7 @@ import axios from 'axios';
 class PostsContainer extends React.Component {
   state = {
     loaded: false,
-    posts: [],
+    posts: [...this.props.posts],
     selectedPost: '',
   };
 
@@ -18,8 +18,13 @@ class PostsContainer extends React.Component {
     )
       .then((res) => {
         console.log(res)
+        const filtered = this.state.posts.filter(post => {
+          if(post._id !== res.data.data._id) {
+            return post
+          }
+        })
         this.setState({
-          posts: this.props.posts
+          posts: [res.data.data,...filtered]
         })
         document.getElementById('exampleModalPost').style.display = 'none';
         document.getElementsByClassName('modal-backdrop')[0].remove()
@@ -31,7 +36,7 @@ class PostsContainer extends React.Component {
   deletePost = (event, deletedPost) => {
     let postId =`${deletedPost.id}`
     event.preventDefault();
-    axios.delete(`${process.env.REACT_APP_API_URL}/posts/deletePost/${postId}`, deletedPost, { withCredentials: true })
+    axios.delete(`${process.env.REACT_APP_API_URL}/posts/deletePost/${postId}`, { withCredentials: true })
     .then((res) => {
       console.log(res)
       document.getElementById('deletePostModal').style.display = 'none';
@@ -53,14 +58,10 @@ class PostsContainer extends React.Component {
 
 
   render() {
-    // console.log(this.props.postDetails)
-    // console.log(process.env.REACT_APP_BASE_API)
-    // let cityPosts = this.props.postDetails.slice()
+    console.log(this.props.posts)
     return (
       <>
-        {/* For the profile posts */}
-        {this.displayPosts(this.props.posts)}
-        {/* {this.state.loaded && this.displayPosts(cityPosts)} */}
+        {this.displayPosts(this.state.posts)}
       </>
     )
   }

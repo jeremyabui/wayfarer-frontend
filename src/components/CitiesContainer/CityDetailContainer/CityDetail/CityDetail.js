@@ -1,5 +1,7 @@
 import React from "react";
-import CreatePostForm from "./CreatePostForm/CreatePostForm";
+
+import CreatePostForm from './CreatePostForm/CreatePostForm';
+import PostsContainer from '../../../PostsContainer/PostsContainer';
 
 const CityDetail = props => {
   return (

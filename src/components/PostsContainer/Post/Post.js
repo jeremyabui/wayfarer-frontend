@@ -17,7 +17,7 @@ const Post = props => {
         type="button"
         className="btn btn-success btn-sm"
         data-toggle="modal"
-        data-target="#exampleModalPost"
+        data-target={`#exampleModalPost${props.postData._id}`}
       >
         Edit
       </button>
@@ -27,14 +27,14 @@ const Post = props => {
         type="button"
         className="btn btn-success btn-sm"
         data-toggle="modal"
-        data-target="#deletePostModal">
+        data-target={`#deletePostModal${props.postData._id}`}>
           Delete
       </button>
 
       {/* <!-- Edit Post Modal --> */}
       <div
         className="modal fade"
-        id="exampleModalPost"
+        id={`exampleModalPost${props.postData._id}`}
         tabIndex="-1"
         role="dialog"
         aria-labelledby="exampleModalLabel"
@@ -70,7 +70,7 @@ const Post = props => {
       {/* <!-- Delete Post Modal --> */}
       <div
         className="modal fade"
-        id="deletePostModal"
+        id={`deletePostModal${props.postData._id}`}
         tabIndex="-1"
         role="dialog"
         aria-labelledby="deletePostModalLabel"
