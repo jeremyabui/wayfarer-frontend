@@ -4,6 +4,15 @@
   box-sizing: border-box;
 }
 
+.video-background {
+  max-width: 100%;
+  min-width: 100%;
+  min-width: 100%;
+  position: absolute;
+  z-index: -1;
+  /* opacity: 0.8; */
+}
+
 /* PROFILE PAGE */
 .profile-page-photo {
   width: 200px;
