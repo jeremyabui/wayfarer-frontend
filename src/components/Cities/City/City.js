@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 class City extends React.Component {
   render() {
     let link = `${this.props.cityData._id}`;
@@ -22,6 +23,13 @@ class City extends React.Component {
         >
           New Post
         </button>
+        <h3
+          className="test"
+          id={`${this.props.cityData._id}`}
+          onClick={this.props.setCurrentCity}
+        >
+          {cityData.name}
+        </h3>
       </>
     );
   }

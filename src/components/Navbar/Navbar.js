@@ -7,7 +7,7 @@ class Navbar  extends Component {
 
   render () {
     return (
-      <section>
+      <header>
         <nav className="navbar navbar-expand-md navbar-dark bg-dark">
           <div className="container">
             <Link className="navbar-brand" to="/">WAYFARER</Link>
@@ -45,7 +45,8 @@ class Navbar  extends Component {
             </div>
           </div>
         </nav>
-      </section>
+  
+      </header>
     );
   };
 };

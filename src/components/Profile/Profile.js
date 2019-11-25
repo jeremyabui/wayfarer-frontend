@@ -51,7 +51,10 @@ const Profile = props => {
               </button>
             </div>
             <div className="modal-body">
-              <UpdateProfile />
+              <UpdateProfile
+                handleUpdate={props.handleUpdate}
+                profile={props.profile}
+              />
             </div>
           </div>
         </div>
