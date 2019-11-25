@@ -7,7 +7,7 @@ import ProfileContainer from "../components/ProfileContainer/ProfileContainer";
 // import UpdateProfile from "../components/Profile/EditProfile/UpdateProfile";
 import PostDetailContainer from '../components/PostDetailContainer/PostDetailContainer';
 import CitiesContainer from "../components/CitiesContainer/CitiesContainer";
-import CityDetailContainer from "../components/CityDetailContainer/CityDetailContainer";
+import CityDetailContainer from "../components/CitiesContainer/CityDetailContainer/CityDetailContainer";
 
 export default ({ currentUser, setCurrentUser }) => (
   <Switch>
