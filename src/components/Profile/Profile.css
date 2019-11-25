@@ -1,8 +1,18 @@
 .profile-container {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
 }
 
-.profile-your-posts {
+.profile-info-container {
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+  position: fixed;
+}
+
+.profile-posts-content {
   margin: 50px;
+  text-decoration: none;
+  color: red;
+  font-size: 50px;
 }
