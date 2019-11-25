@@ -28,6 +28,8 @@ class PostDetailContainer extends React.Component {
     return (
       <div className="container">
         <h2>POST DETAIL</h2>
+        {/* Profile  */}
+        {/* {this.state.loaded && <PostDetail posts={this.state.postDetail} /> } */}
         {this.state.loaded && <PostDetail postDetail={this.state.postDetail} /> }
       </div>
     ) 
