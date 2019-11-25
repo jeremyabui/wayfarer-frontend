@@ -1,8 +1,8 @@
 import React from "react";
 import axios from "axios";
 
-import Profile from "../components/Profile/Profile";
-import PostsContainer from "./PostsContainer";
+import Profile from "./Profile/Profile";
+import PostsContainer from "../PostsContainer/PostsContainer";
 
 class ProfileContainer extends React.Component {
   state = {

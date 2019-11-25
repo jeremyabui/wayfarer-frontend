@@ -26,7 +26,6 @@ class UpdateProfile extends React.Component {
 
 
   render() {
-    console.log(this.props.profile)
     return (
       <div className="container">
         <form onSubmit={(event) => this.props.handleUpdate(event, this.state)}>

@@ -1,5 +1,4 @@
 import React from "react";
-import "./Profile.css";
 import UpdateProfile from "../Profile/EditProfile/UpdateProfile";
 
 const Profile = props => {

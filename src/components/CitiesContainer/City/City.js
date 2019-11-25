@@ -15,7 +15,7 @@ class City extends React.Component {
         >
           {cityData.name}
         </h3>
-        <button
+        {/* <button
           type="button"
           className="btn btn-success"
           data-toggle="modal"
@@ -29,7 +29,6 @@ class City extends React.Component {
           onClick={this.props.setCurrentCity}
         >
           {/* {cityData.name} */}
-        </h3>
       </>
     );
   }
