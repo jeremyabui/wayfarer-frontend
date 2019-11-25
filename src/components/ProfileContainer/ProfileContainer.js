@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import homeVideo from "./assets/video2.mp4";
+import homeVideo from "./assets/video3.mp4";
 
 import Profile from "./Profile/Profile";
 import PostsContainer from "../PostsContainer/PostsContainer";
