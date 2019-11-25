@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import {withRouter} from 'react-router-dom'
+import {withRouter, Router} from 'react-router-dom'
 
 
 
@@ -15,40 +15,25 @@ class UpdateProfile extends React.Component {
   handleChange = (event) => {
     // console.log(event.target.files[0])
     this.setState({
+<<<<<<< HEAD:src/components/ProfileContainer/Profile/EditProfile/UpdateProfile.js
     [event.target.name]: event.target.value,
+=======
+      [event.target.name]: event.target.value,
+>>>>>>> b751d49560c152a8a29cf5778e96026c98ff964f:src/components/Profile/EditProfile/UpdateProfile.js
       // profilePhoto: event.target.files[0],
       // loaded: 0,
     })
   }
 
-  handleSubmit = (event) => {
-    event.preventDefault()
-    const userId = localStorage.getItem('uid')
-    const data = new FormData() 
-    data.append('file', this.state.profilePhoto)
-    axios.put(`${process.env.REACT_APP_API_URL}/auth/update/${userId}`, this.state, {
-      withCredentials: true,
-    })
-    .then(res => {
-      console.log(res)
-      this.setState({
-        name: '',
-        username: '',
-        currentCity: '',
-      })
-      // const userId = localStorage.getItem('uid')
-      document.getElementById('exampleModalPro').style.display = 'none';
-      document.getElementsByClassName('modal-backdrop')[0].remove()
-      window.location.reload()
-    })
-    .catch((err) => console.log(err))
-}
+
+  
 
 
   render() {
+    console.log(this.props.profile)
     return (
       <div className="container">
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={(event) => this.props.handleUpdate(event, this.state)}>
           <div className="form-group">
             <label htmlFor="name">Name</label>
             <input onChange={this.handleChange} className="form-control form-control-lg" type="text" id="name" name="name" value={this.state.name} />

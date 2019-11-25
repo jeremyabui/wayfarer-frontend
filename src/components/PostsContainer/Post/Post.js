@@ -1,14 +1,13 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
-const Post = (props) => {
+const Post = props => {
   let link = `posts/${props.postData._id}`;
   return (
-    <>
-      <h3>YOUR POSTS</h3>
+    <div className="profile-your-posts">
       <Link to={link}>{props.postData.title}</Link>
-    </>
-  )
+    </div>
+  );
 };
 
 export default Post;

@@ -7,7 +7,29 @@ class City extends React.Component {
     const { cityData } = this.props;
     return (
       <>
-        <h3 className='test' id={`${this.props.cityData._id}`} onClick={this.props.setCurrentCity} >{cityData.name}</h3>
+        <h3
+          className="test"
+          id={`${this.props.cityData._id}`}
+          onClick={this.props.setCurrentCity}
+          key={this.props.cityData.id}
+        >
+          {cityData.name}
+        </h3>
+        <button
+          type="button"
+          className="btn btn-success"
+          data-toggle="modal"
+          data-target="#exampleModalPro"
+        >
+          New Post
+        </button>
+        <h3
+          className="test"
+          id={`${this.props.cityData._id}`}
+          onClick={this.props.setCurrentCity}
+        >
+          {cityData.name}
+        </h3>
       </>
     );
   }
