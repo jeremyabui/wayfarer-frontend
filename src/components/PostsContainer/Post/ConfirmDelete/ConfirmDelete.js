@@ -2,23 +2,19 @@ import React from 'react';
 import { Link, withRouter } from "react-router-dom";
 
 class confirmDelete extends React.Component {
-  render(){
+  state = {
+    id: this.props.postData._id,
+
+  }
+  render() {
     return (
-      <div className="container mt-4">
-      <div className="row">
-        <div className="col-md-4 offset-md-4">
-          <form onSubmit={this.handleSubmit}>
-            <div className="form-group">
-              <label htmlFor="name">Are you sure you want to delete this post?</label>
-            </div>
-            <button className="btn btn-primary float-right" type="submit">Yes</button>
-            <button className="btn btn-primary float-right" type="submit">No</button>
-          </form>
-        </div>
+      <div className="container">
+        <form onSubmit={(event) => this.props.deletePost(event, this.state)}>
+          <button type="submit" className="btn btn-primary m-l">Yes</button>
+        </form>
       </div>
-    </div>
-      );
+    )
   }
 }
 
-export default withRouter(confirmDelete);
+export default confirmDelete;

@@ -11,42 +11,35 @@ class PostsContainer extends React.Component {
     selectedPost: '',
   };
 
-  setSelectedPost = (event) => {
-    this.setState({
-      selectedPost: event.target.id
-    })
-  }
-
-  componentDidMount() {
-    this.setState({
-      posts: this.props.postDetails,
-      loaded: true,
-    })
-  }
-
-  deletePost = () => {
-    // this.setState({
-    //   selectedPost: event.target.id
-    // })
-    // .then(
-      axios.delete(`${process.env.REACT_APP_API_URL}/posts/deletepost/${this.state.selectedPost}`)
-      .then(res => {
-        console.log(res);
-        this.props.history.push('/profile')
-        .catch(err => console.log(err))
+  handlePostEdit = (event, updatedPost) => {
+    let postId = `${updatedPost.id}`
+    event.preventDefault();
+    axios.put(`${process.env.REACT_APP_API_URL}/posts/${postId}`, updatedPost, { withCredentials: true }
+    )
+      .then((res) => {
+        console.log(res)
+        this.setState({
+          posts: this.props.posts
+        })
       })
-    // )
-    // .catch(err => console.log(err))
+      .catch((err) => console.log(err));
+  };
+
+  deletePost = (event, deletedPost) => {
+    let postId =`${deletedPost.id}`
+    event.preventDefault();
+    axios.delete(`${process.env.REACT_APP_API_URL}/posts/delete/${postId}`, deletedPost, { withCredentials: true })
+    .then((res) => {
+      console.log(res)
+    })
+    .catch((err) => console.log(err));
   }
 
   displayPosts = (posts) => {
     // console.log(posts)
     return posts.map((post) => {
       return (
-        // Profile Posts
-        <Post key={post._id} postData={post} deletePost={this.deletePost} setSelectedPost={this.setSelectedPost}/>
-        // <Post key={post._id} postData={post} deletePost={this.deletePost}/>
-        // <Post key={this.props.postDetails._id} postData={post} />
+        <Post key={post._id} postData={post} handlePostEdit={this.handlePostEdit} deletePost={this.deletePost}/>
       )
     })
   };

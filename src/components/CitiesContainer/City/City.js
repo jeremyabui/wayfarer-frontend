@@ -8,7 +8,7 @@ class City extends React.Component {
     return (
       <>
         <h3
-          className="test"
+          className="city-item"
           id={`${this.props.cityData._id}`}
           onClick={this.props.setCurrentCity}
           key={this.props.cityData.id}

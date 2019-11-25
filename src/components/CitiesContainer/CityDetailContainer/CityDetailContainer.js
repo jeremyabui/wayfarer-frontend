@@ -2,7 +2,6 @@ import React from "react";
 import axios from "axios";
 
 import CityDetail from "./CityDetail/CityDetail";
-import CreatePostForm from './CityDetail/CreatePostForm/CreatePostForm';
 import PostsContainer from '../../PostsContainer/PostsContainer';
 
 class CityDetailContainer extends React.Component {

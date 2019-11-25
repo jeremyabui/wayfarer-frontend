@@ -1,0 +1,27 @@
+.cities-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.city-list {
+  min-width: 200px;
+  margin: 100px auto;
+  font-size: 50px;
+}
+
+.city-item {
+  margin: 30px auto;
+}
+
+.city-item:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.city-detail-image {
+  width: 70vw;
+  height: 500px;
+  overflow: hidden;
+  text-align: center;
+}
