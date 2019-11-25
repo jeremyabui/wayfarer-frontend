@@ -9,7 +9,7 @@ const Profile = props => {
     <div>
       <div className="profile-info-container">
         <div>
-          <h2>A SAHHH, {props.profile.name}</h2>
+          <h2>Hey, {props.profile.name}. Welcome back!</h2>
           <img
             className="profile-page-photo"
             src={props.profile.profilePhoto}
