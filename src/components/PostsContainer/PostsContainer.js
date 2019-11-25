@@ -21,6 +21,9 @@ class PostsContainer extends React.Component {
         this.setState({
           posts: this.props.posts
         })
+        document.getElementById('exampleModalPost').style.display = 'none';
+        document.getElementsByClassName('modal-backdrop')[0].remove()
+        this.props.history.push('/cities');
       })
       .catch((err) => console.log(err));
   };
@@ -28,7 +31,7 @@ class PostsContainer extends React.Component {
   deletePost = (event, deletedPost) => {
     let postId =`${deletedPost.id}`
     event.preventDefault();
-    axios.delete(`${process.env.REACT_APP_API_URL}/posts/delete/${postId}`, deletedPost, { withCredentials: true })
+    axios.delete(`${process.env.REACT_APP_API_URL}/posts/deletePost/${postId}`, deletedPost, { withCredentials: true })
     .then((res) => {
       console.log(res)
     })

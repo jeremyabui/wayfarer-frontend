@@ -11,6 +11,11 @@ class confirmDelete extends React.Component {
       <div className="container">
         <form onSubmit={(event) => this.props.deletePost(event, this.state)}>
           <button type="submit" className="btn btn-primary m-l">Yes</button>
+          <button 
+            type="button" 
+            className="btn btn-primary m-l"                
+            data-dismiss="modal"
+            aria-label="Close">No</button>
         </form>
       </div>
     )
