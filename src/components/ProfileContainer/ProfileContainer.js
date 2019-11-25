@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import homeVideo from "./assets/video3.mp4";
+import img1 from "./assets/img1.jpg";
 
 import Profile from "./Profile/Profile";
 import PostsContainer from "../PostsContainer/PostsContainer";
@@ -62,12 +62,7 @@ class ProfileContainer extends React.Component {
   render() {
     return (
       <>
-        <video
-          className="profile-video"
-          src={homeVideo}
-          autoPlay={true}
-          loop={true}
-        ></video>
+        <img className="profile-img-background" src={img1} />
         <div className="profile-container">
           {this.state.loaded && (
             <Profile
