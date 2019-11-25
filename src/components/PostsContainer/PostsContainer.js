@@ -36,7 +36,7 @@ class PostsContainer extends React.Component {
   deletePost = (event, deletedPost) => {
     let postId =`${deletedPost.id}`
     event.preventDefault();
-    axios.delete(`${process.env.REACT_APP_API_URL}/posts/deletePost/${postId}`, deletedPost, { withCredentials: true })
+    axios.delete(`${process.env.REACT_APP_API_URL}/posts/deletePost/${postId}`, { withCredentials: true })
     .then((res) => {
       console.log(res)
       document.getElementById('deletePostModal').style.display = 'none';
