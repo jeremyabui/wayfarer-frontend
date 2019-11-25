@@ -63,7 +63,7 @@ class ProfileContainer extends React.Component {
     return (
       <>
         <video
-          className="profile-img-background"
+          className="video-background"
           autoPlay={true}
           loop={true}
           src={video2}

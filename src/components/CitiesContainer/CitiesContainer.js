@@ -49,7 +49,7 @@ class CitiesContainer extends React.Component {
       <section>
         <div className="cities-explore">
           <video
-            className="profile-img-background"
+            className="video-background"
             autoPlay={true}
             loop={true}
             src={video2}
