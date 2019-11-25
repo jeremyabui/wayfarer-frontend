@@ -26,7 +26,7 @@ class  Login extends Component {
       this.props.setCurrentUser(res.data.data);
       document.getElementById('exampleModal2').style.display = 'none';
       document.getElementsByClassName('modal-backdrop')[0].remove()
-      this.props.history.push('/profile');
+      this.props.history.push('/cities');
     })
     .catch((err) => console.log(err));
   }
