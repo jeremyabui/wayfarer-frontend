@@ -8,6 +8,7 @@ class PostsContainer extends React.Component {
   state = {
     loaded: false,
     posts: [...this.props.posts],
+    selectedPost: '',
   };
 
   handlePostEdit = (event, updatedPost) => {
@@ -25,26 +26,36 @@ class PostsContainer extends React.Component {
         this.setState({
           posts: [res.data.data,...filtered]
         })
+        document.getElementById('exampleModalPost').style.display = 'none';
+        document.getElementsByClassName('modal-backdrop')[0].remove()
+        this.props.history.push('/cities');
       })
       .catch((err) => console.log(err));
   };
 
-  // componentDidUpdate(prevProps) {
-  //   console.log(prevProps.posts)
-  //   if (prevProps.posts !== this.state.posts) {
-  //     this.setState({
-  //       posts: this.state.posts
-  //     })
-  //   }
-  // }
+  deletePost = (event, deletedPost) => {
+    let postId =`${deletedPost.id}`
+    event.preventDefault();
+    axios.delete(`${process.env.REACT_APP_API_URL}/posts/deletePost/${postId}`, deletedPost, { withCredentials: true })
+    .then((res) => {
+      console.log(res)
+      document.getElementById('deletePostModal').style.display = 'none';
+      document.getElementsByClassName('modal-backdrop')[0].remove()
+      this.props.history.push('/cities');
+    })
+    .catch((err) => console.log(err));
+  }
 
   displayPosts = (posts) => {
+    // console.log(posts)
     return posts.map((post) => {
       return (
-        <Post key={post._id} postData={post} handlePostEdit={this.handlePostEdit} />
+        <Post key={post._id} postData={post} handlePostEdit={this.handlePostEdit} deletePost={this.deletePost}/>
       )
     })
   };
+
+
 
   render() {
     console.log(this.props.posts)
