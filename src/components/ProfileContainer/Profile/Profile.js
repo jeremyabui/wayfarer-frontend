@@ -1,11 +1,6 @@
-<<<<<<< HEAD:src/components/ProfileContainer/Profile/Profile.js
-import React from 'react';
-import UpdateProfile from './EditProfile/UpdateProfile';
-=======
 import React from "react";
 import "./Profile.css";
 import UpdateProfile from "../Profile/EditProfile/UpdateProfile";
->>>>>>> b751d49560c152a8a29cf5778e96026c98ff964f:src/components/Profile/Profile.js
 
 const Profile = props => {
   console.log(props.profile);
