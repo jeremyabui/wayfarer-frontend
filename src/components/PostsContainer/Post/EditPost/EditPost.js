@@ -1,4 +1,5 @@
 import React from 'react';
+import {withRouter} from 'react-router-dom';
 
 class EditPost extends React.Component {
   state = {
@@ -26,11 +27,11 @@ class EditPost extends React.Component {
             <label htmlFor="body">Body</label>
             <textarea onChange={this.handleChange} className="form-control" id="post-body" rows="3" name="body"></textarea>
           </div>
-          <button type="submit" className="btn btn-primary m-l">Save</button>
+          <button type="submit" className="btn btn-primary float-right">Save</button>
         </form>
       </div>
     )
   }
 }
 
-export default EditPost;
+export default withRouter(EditPost);
