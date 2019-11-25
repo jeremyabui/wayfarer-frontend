@@ -1,8 +1,5 @@
 import React from 'react';
-import axios from 'axios';
-import {withRouter, Router} from 'react-router-dom'
-
-
+import {withRouter} from 'react-router-dom'
 
 class UpdateProfile extends React.Component {
   state = {

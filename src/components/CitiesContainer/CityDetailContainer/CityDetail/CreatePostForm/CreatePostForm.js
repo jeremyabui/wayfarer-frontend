@@ -42,7 +42,7 @@ class CreatePostForm extends React.Component {
     return(
       <>
         <button className="nav-item" type="button"
-        id="register" className="nav-link" data-toggle="modal" data-target="#createPostForm" to='/register'>Create Post</button>
+        id="register" className="nav-link" data-toggle="modal" data-target="#createPostForm">Create Post</button>
         <div className="modal fade" id="createPostForm" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div className="modal-dialog" role="document">
             <div className="modal-content">
@@ -67,7 +67,7 @@ class CreatePostForm extends React.Component {
                   </div>
                   <div className="form-group">
                       <label htmlFor="body">Body</label>
-                      <textarea class="form-control" id="body" name="body" rows="3" onChange={this.handleChange} value={this.state.body}></textarea>
+                      <textarea className="form-control" id="body" name="body" rows="3" onChange={this.handleChange} value={this.state.body}></textarea>
                     </div>
                   <button className="btn btn-primary float-right" type="submit">
                   Create Post
