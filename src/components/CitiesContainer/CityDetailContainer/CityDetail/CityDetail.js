@@ -1,4 +1,5 @@
 import React from "react";
+import CreatePostForm from './CreatePostForm/CreatePostForm';
 
 const CityDetail = props => {
   return (
@@ -8,6 +9,7 @@ const CityDetail = props => {
       <div className="city-detail-image">
         <img src={props.cityDetails.photo} alt={props.cityDetails.name}/>
       </div>
+      {props.cityDetails && <CreatePostForm cityDetails={props.cityDetails} /> }
     </>
   );
 };
