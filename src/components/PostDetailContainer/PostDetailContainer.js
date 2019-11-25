@@ -5,7 +5,7 @@ import PostDetail from './PostDetail/PostDetail.js';
 
 class PostDetailContainer extends React.Component {
   state = {
-    postDetail: '',
+    postDetail: null,
     loaded: false,
   };
 
@@ -13,7 +13,7 @@ class PostDetailContainer extends React.Component {
     const postId = document.location.href.split('/')[4];
     axios.get(`${process.env.REACT_APP_API_URL}/posts/${postId}`, { withCredentials: true })
       .then((res) => {
-        console.log(res);
+        console.log(res.data.data);
         this.setState({
           postDetail: res.data.data,
           loaded: true,
@@ -28,7 +28,7 @@ class PostDetailContainer extends React.Component {
     return (
       <div className="container">
         <h2>POST DETAIL</h2>
-        {this.state.loaded && <PostDetail postDetail={this.state.postDetail} /> }
+        {this.state.postDetail && <PostDetail postDetail={this.state.postDetail} />}
       </div>
     ) 
   }
