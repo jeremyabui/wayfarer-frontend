@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import homeVideo from "./assets/video2.mp4";
 
 import Profile from "./Profile/Profile";
 import PostsContainer from "../PostsContainer/PostsContainer";
@@ -60,19 +61,27 @@ class ProfileContainer extends React.Component {
 
   render() {
     return (
-      <div className="profile-container">
-        {this.state.loaded && (
-          <Profile
-            profile={this.state.profile}
-            handleUpdate={this.handleUpdate}
-          />
-        )}
-        <div>
+      <>
+        <video
+          className="profile-video"
+          src={homeVideo}
+          autoPlay={true}
+          loop={true}
+        ></video>
+        <div className="profile-container">
           {this.state.loaded && (
-            <PostsContainer posts={this.state.profile.posts} />
+            <Profile
+              profile={this.state.profile}
+              handleUpdate={this.handleUpdate}
+            />
           )}
+          <div>
+            {this.state.loaded && (
+              <PostsContainer posts={this.state.profile.posts} />
+            )}
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../../Profile/Profile.css";
+import "../../ProfileContainer/Profile.css";
 
 const Post = props => {
   let link = `posts/${props.postData._id}`;
