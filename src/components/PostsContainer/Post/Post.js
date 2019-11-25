@@ -1,9 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import EditPost from './EditPost/EditPost'
-import "../../Profile/Profile.css";
-
-
+import EditPost from "./EditPost/EditPost";
+import "../../ProfileContainer/Profile.css";
 
 const Post = props => {
   let link = `posts/${props.postData._id}`;
@@ -14,15 +12,15 @@ const Post = props => {
         {props.postData.title}
       </Link>
       <button
-          type="button"
-          className="btn btn-success btn-sm"
-          data-toggle="modal"
-          data-target="#exampleModalPro"
-        >
-          Edit
-        </button>
- {/* <!-- Modal --> */}
-  <div
+        type="button"
+        className="btn btn-success btn-sm"
+        data-toggle="modal"
+        data-target="#exampleModalPro"
+      >
+        Edit
+      </button>
+      {/* <!-- Modal --> */}
+      <div
         className="modal fade"
         id="exampleModalPro"
         tabIndex="-1"
@@ -46,7 +44,12 @@ const Post = props => {
               </button>
             </div>
             <div className="modal-body">
-              {props.postData && <EditPost handlePostEdit={props.handlePostEdit} postData={props.postData}/> }
+              {props.postData && (
+                <EditPost
+                  handlePostEdit={props.handlePostEdit}
+                  postData={props.postData}
+                />
+              )}
             </div>
           </div>
         </div>
