@@ -47,7 +47,7 @@ class CreatePostForm extends React.Component {
           <div className="modal-dialog" role="document">
             <div className="modal-content">
               <div className="modal-header">
-              <h5 className="modal-title" id="exampleModalLabel">Register</h5>
+              <h5 className="modal-title" id="exampleModalLabel">Create Post</h5>
               <button type="button" className="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
               </button>
@@ -66,15 +66,8 @@ class CreatePostForm extends React.Component {
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="body">Body</label>
-                    <input
-                      onChange={this.handleChange}
-                      className="form-control form-control-lg"
-                      type="text"
-                      id="body"
-                      name="body"
-                      value={this.state.body}
-                    />
+                      <label htmlFor="body">Body</label>
+                      <textarea class="form-control" id="body" name="body" rows="3" onChange={this.handleChange} value={this.state.body}></textarea>
                     </div>
                   <button className="btn btn-primary float-right" type="submit">
                   Create Post
