@@ -6,25 +6,29 @@ const Profile = props => {
   const dateJoined = props.profile.createdAt;
 
   return (
-    <div className="profile-container">
-      <h2>A SAHHH, {props.profile.name}</h2>
-      <img
-        className="profile-page-photo"
-        src={props.profile.profilePhoto}
-        alt={props.profile.name + `'s profile picture`}
-      />
-      <h5>Current City: {props.profile.currentCity}</h5>
-      <h6>Date Joined: {dateJoined}</h6>
+    <div>
+      <div className="profile-info-container">
+        <div>
+          <h2>A SAHHH, {props.profile.name}</h2>
+          <img
+            className="profile-page-photo"
+            src={props.profile.profilePhoto}
+            alt={props.profile.name + `'s profile picture`}
+          />
+          <h5>Current City: {props.profile.currentCity}</h5>
+          <h6>Date Joined: {dateJoined}</h6>
+        </div>
 
-      {/* <!-- Button trigger modal --> */}
-      <button
-        type="button"
-        className="btn btn-primary"
-        data-toggle="modal"
-        data-target="#exampleModalPro"
-      >
-        Update Profile
-      </button>
+        {/* <!-- Button trigger modal --> */}
+        <button
+          type="button"
+          className="btn btn-success btn-sm"
+          data-toggle="modal"
+          data-target="#exampleModalPro"
+        >
+          Update Profile
+        </button>
+      </div>
       {/* <!-- Modal --> */}
       <div
         className="modal fade"
