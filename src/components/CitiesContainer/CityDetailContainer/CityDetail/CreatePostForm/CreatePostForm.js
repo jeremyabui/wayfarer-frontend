@@ -24,8 +24,8 @@ class CreatePostForm extends React.Component {
   //     })
   //     .then(res => {
   //       console.log(res)
-  //       document.getElementById(`createPostForm`).style.display = 'none';
-  //       document.getElementsByClassName('modal-backdrop')[0].remove()
+  //       // document.getElementById(`createPostForm`).style.display = 'none';
+  //       // document.getElementsByClassName('modal-backdrop')[0].remove()
   //     })
   //     .catch(err => console.log(err));
   // };
@@ -48,6 +48,7 @@ class CreatePostForm extends React.Component {
     console.log(this.props.cityDetails);
     return(
       <>
+      
         <button className="nav-item" type="button"
         id="register" className="nav-link" data-toggle="modal" data-target="#createPostForm">Create Post</button>
         <div className="container">
@@ -59,26 +60,33 @@ class CreatePostForm extends React.Component {
                 <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
-                </div>
-                <div className="modal-body"></div>
-                  <form onSubmit={(event) => this.props.handleSubmit(event, this.state)}>
-                    <div className="form-group">
-                      <label htmlFor="title">Title</label>
-                      <input
-                        onChange={this.handleChange}
-                        className="form-control form-control-lg"
-                        type="text"
-                        id="title"
-                        name="title"
-                        value={this.state.title}
-                        required
-                      />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="body">Body</label>
-                        <textarea className="form-control" id="body" name="body" rows="3" onChange={this.handleChange} value={this.state.body} required maxLength="200"></textarea>
-                      </div>
-                    <button className="btn btn-primary float-right" type="submit">
+              </div>
+              
+              <div className="modal-body">
+                <form>
+                  <div className="form-group">
+                    <label htmlFor="title">Title</label>
+                    <input
+                      onChange={this.handleChange}
+                      className="form-control form-control-lg"
+                      type="text"
+                      id="title"
+                      name="title"
+                      value={this.state.title}
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="body">Body</label>
+                    <textarea
+                      className="form-control"
+                      id="body"
+                      name="body"
+                      rows="3"
+                      onChange={this.handleChange}
+                      value={this.state.body}
+                    ></textarea>
+                  </div>
+                  <button data-dismiss="modal" onClick={event => this.props.handleSubmit(event, this.state)} className="btn btn-primary float-right" type="submit">
                     Create Post
                   </button>
                 </form>
@@ -86,6 +94,7 @@ class CreatePostForm extends React.Component {
             </div>
           </div>
         </div>
+      </div>
       </>
     )
   }

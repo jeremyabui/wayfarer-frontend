@@ -22,7 +22,7 @@ class UpdateProfile extends React.Component {
   render() {
     return (
       <div className="container">
-        <form onSubmit={(event) => this.props.handleUpdate(event, this.state)}>
+        <form>
           <div className="form-group">
             <label htmlFor="name">Name</label>
             <input onChange={this.handleChange} className="form-control form-control-lg" type="text" id="name" name="name" value={this.state.name} />
@@ -39,7 +39,7 @@ class UpdateProfile extends React.Component {
             <label htmlFor="profilePhoto">Profile Photo</label>
             <input onChange={this.handleChange} className="form-control form-control-lg" type="file" id="profilePhoto" name="profilePhoto"/>
           </div> */}
-          <button type="submit" className="btn btn-success float-right">save</button> 
+          <button data-dismiss="modal" onClick={(event) => this.props.handleUpdate(event, this.state)} type="submit" className="btn btn-success float-right">save</button> 
         </form>
       </div>
     )
