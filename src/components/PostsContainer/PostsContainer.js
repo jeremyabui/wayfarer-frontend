@@ -42,7 +42,6 @@ class PostsContainer extends React.Component {
   }
 
   displayPosts = (posts) => {
-    // console.log(posts)
     return posts.map((post) => {
       return (
         <Post key={post._id} postData={post} handlePostEdit={this.handlePostEdit} deletePost={this.deletePost}/>
@@ -53,14 +52,14 @@ class PostsContainer extends React.Component {
 
 
   render() {
-    // console.log(this.props.postDetails)
-    // console.log(process.env.REACT_APP_BASE_API)
-    // let cityPosts = this.props.postDetails.slice()
+
     return (
       <>
-        {/* For the profile posts */}
+      <div className="row">
+         {/* For the profile posts */}
         {this.displayPosts(this.props.posts)}
         {/* {this.state.loaded && this.displayPosts(cityPosts)} */}
+      </div>
       </>
     )
   }

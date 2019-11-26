@@ -2,7 +2,6 @@ import React from "react";
 import City from "./City/City";
 import CityDetailContainer from "./CityDetailContainer/CityDetailContainer";
 import axios from "axios";
-import video2 from "./assets/gardenVideo.mp4";
 import "./CitiesContainer.css";
 
 class CitiesContainer extends React.Component {
@@ -33,36 +32,39 @@ class CitiesContainer extends React.Component {
   displayCities = cities => {
     return cities.map(city => {
       return (
-        <>
-          <City
-            setCurrentCity={this.setCurrentCity}
-            cityData={city}
-            key={city._id}
-          />
-        </>
+          <li>
+            <City
+              setCurrentCity={this.setCurrentCity}
+              cityData={city}
+              key={city._id}
+            />
+          </li>
       );
     });
   };
 
   render() {
     return (
-      <section>
-        <div className="cities-explore">
-          <video
-            className="video-background"
-            autoPlay={true}
-            loop={true}
-            src={video2}
-          ></video>
-          <h1>EXPLORE</h1>
-        </div>
-        <div className="cities-container">
-          <div className="city-list">
-            {this.displayCities(this.state.citiesData)}
+      <div className=" container-fluid ">
+        <div className="row">
+          <div className="cities-explore col">
+            <h1 className="explore">EXPLORE</h1>
           </div>
-          <CityDetailContainer selectedCity={this.state.selectedCity} />
         </div>
-      </section>
+        {/* for sidebar */}
+        <div className="row">
+          <div className="col col-md-3">
+            <div className=" city-list p-5 row-md">
+              <ul>
+                {this.displayCities(this.state.citiesData)}
+              </ul>
+            </div>
+          </div>
+          <div className=" col-md-9 col">
+            <CityDetailContainer selectedCity={this.state.selectedCity} />
+          </div>
+        </div>
+      </div>
     );
   }
 }

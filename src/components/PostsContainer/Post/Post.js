@@ -8,28 +8,33 @@ import ConfirmDelete from './ConfirmDelete/ConfirmDelete'
 const Post = props => {
   let link = `posts/${props.postData._id}`;
   return (
-    <div className="profile-posts-container" id={props.postData._id} onClick={props.setSelectedPost}>
-      <hr/>
-      <Link className="profile-posts-content" to={link}>
-        {props.postData.title}
-      </Link>
-      <button
-        type="button"
-        className="btn btn-success btn-sm"
-        data-toggle="modal"
-        data-target="#exampleModalPost"
-      >
-        Edit
-      </button>
-
-      {/* Delete */}
-      <button 
-        type="button"
-        className="btn btn-success btn-sm"
-        data-toggle="modal"
-        data-target="#deletePostModal">
-          Delete
-      </button>
+    <div className="col col-md-12 profile-posts-container" id={props.postData._id} onClick={props.setSelectedPost}>
+      <div className="row  align-items-center">
+        <div className="col col-md-9  align-items-center">
+          <Link className="profile-posts-content" to={link}>
+            {props.postData.title}
+          </Link>
+        </div>
+        <div className="col col-md-3  align-items-center">
+          <div class="btn-group" role="group" aria-label="Basic example">
+          <button type="button"
+            className="btn btn-success btn-sm"
+            data-toggle="modal"
+            data-target="#exampleModalPost"
+          >
+            Edit
+          </button>
+          {/* Delete */}
+          <button 
+            type="button"
+            className="btn btn-success btn-sm"
+            data-toggle="modal"
+            data-target="#deletePostModal">
+              Delete
+            </button>
+          </div>
+        </div>
+      </div>
 
       {/* <!-- Edit Post Modal --> */}
       <div
@@ -102,8 +107,6 @@ const Post = props => {
           </div>
         </div>
         </div>
-
-
       <hr />
     </div>
   );
