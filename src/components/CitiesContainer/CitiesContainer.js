@@ -55,7 +55,6 @@ class CitiesContainer extends React.Component {
             loop={true}
             src={video2}
           ></video>
-          <h1>EXPLORE</h1>
         </div>
         <div className="cities-container">
           <div className="city-list">

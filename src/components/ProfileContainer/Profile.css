@@ -17,12 +17,13 @@
 .profile-posts-content {
   margin: 50px;
   text-decoration: none;
-  color: whitesmoke;
-  font-size: 50px;
+  color: black;
+  font-size: 32px;
 }
 
 .profile-posts-container {
-
+  display: flex;
+  flex-direction: column;
 }
 
 .profile-posts-content:hover {

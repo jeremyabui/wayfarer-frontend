@@ -13,7 +13,7 @@ const Post = props => {
   let postId = `${props.postData._id}`
   let postTitle = `${props.postData.title}`
   return (
-    <div className="profile-posts-container" id={props.postData._id} onClick={props.setSelectedPost}>
+    <div className="post-container" id={props.postData._id} onClick={props.setSelectedPost}>
       <hr/>
       <Link className="profile-posts-content" to={link}>
         {props.postData.title}
