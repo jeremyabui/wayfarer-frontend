@@ -2,6 +2,7 @@ import React from 'react';
 // import axios from 'axios';
 
 import Post from './Post/Post';
+import CreatePostForm from '../CitiesContainer/CityDetailContainer/CityDetail/CreatePostForm/CreatePostForm';
 import axios from 'axios';
 
 class PostsContainer extends React.Component {
@@ -10,6 +11,18 @@ class PostsContainer extends React.Component {
     posts: [...this.props.posts],
     selectedPost: '',
   };
+
+  handleSubmit = (event, createdPost) => {
+    event.preventDefault();
+    axios.post(`${process.env.REACT_APP_API_URL}/posts/newpost`, createdPost, { withCredentials: true })
+    .then((res) => {
+      let newPosts = [...this.state.posts].concat(res.data.data)
+      this.setState({
+        posts: newPosts
+      })
+    })
+    .catch((err) => console.log(err));
+  }
 
   handlePostEdit = (event, updatedPost) => {
     let postId = `${updatedPost.id}`
@@ -56,11 +69,11 @@ class PostsContainer extends React.Component {
   };
 
 
-
   render() {
     console.log(this.props.posts)
     return (
       <>
+        {this.props.cityDetails && <CreatePostForm handleSubmit={this.handleSubmit} cityDetails={this.props.cityDetails} /> }
         {this.displayPosts(this.state.posts)}
       </>
     )

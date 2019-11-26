@@ -11,7 +11,7 @@ const CityDetail = props => {
       <div className="city-detail-image">
         <img src={props.cityDetails.photo} alt={props.cityDetails.name} />
       </div>
-      {props.cityDetails && <CreatePostForm cityDetails={props.cityDetails} />}
+      
     </>
   );
 };
