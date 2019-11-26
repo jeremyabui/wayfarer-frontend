@@ -3,6 +3,7 @@
   margin-right: 15px;
   float: right;
 }
+
 .post-delete-button {
   height: 30px;
   background-color: red;
@@ -15,9 +16,16 @@
 }
 
 .post-container {
-  color: black;
+  color: whitesmoke;
   display: flex;
   align-items: center;
   height: 100px;
   width: 500px;
+  background-color: rgba(104,104,104, 0.9);
+  border-radius: 10px;
+  margin: 5px;
 }
+
+/* .buttonz {
+  float: right;
+} */

@@ -16,14 +16,17 @@ const Post = props => {
     
     <div className="post-container" id={props.postData._id} onClick={props.setSelectedPost}>
       <hr/>
+      {/* <div className="row"> */}
+      <div className="col col-sm-6 col-md-4">
       <Link className="profile-posts-content" to={link}>
         {props.postData.title}
       </Link>
-
+      </div>
+      <div className="buttonz justify-content-end col-sm-6 col-md-8">
       { localStorage.getItem('uid')===props.postData.author && 
       <button
         type="button"
-        className="btn btn-success btn-sm post-edit-button"
+        className="btn btn-success btn-sm post-edit-button justify-content-end"
         data-toggle="modal"
         data-target={`#exampleModalPost${props.postData._id}`}
       >
@@ -33,12 +36,14 @@ const Post = props => {
       {/* Delete */}
       { localStorage.getItem('uid')===props.postData.author && <button 
         type="button"
-        className="btn btn-success btn-sm post-delete-button"
+        className="btn btn-success btn-sm post-delete-button float-right justify-content-end"
         data-toggle="modal"
         data-target={`#deletePostModal${props.postData._id}`}>
           Delete
       </button>
 }
+</div>
+{/* </div> */}
       {/* <!-- Edit Post Modal --> */}
       <div
         className="modal fade"

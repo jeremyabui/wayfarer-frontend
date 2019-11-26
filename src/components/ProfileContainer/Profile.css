@@ -15,10 +15,15 @@
 }
 
 .profile-posts-content {
-  margin: 50px;
+  margin: 0px;
+  margin-left: 10px;
   text-decoration: none;
-  color: black;
+  color: whitesmoke;
   font-size: 32px;
+}
+
+.profile-posts-content a {
+  color: white !important;
 }
 
 .profile-posts-container {
