@@ -13,6 +13,8 @@ class PostsContainer extends React.Component {
 
   handlePostEdit = (event, updatedPost) => {
     let postId = `${updatedPost.id}`
+    let logId =`${updatedPost}`
+    console.log(logId)
     event.preventDefault();
     axios.put(`${process.env.REACT_APP_API_URL}/posts/${postId}`, updatedPost, { withCredentials: true }
     )

@@ -16,6 +16,7 @@ class EditPost extends React.Component {
   };
 
   render() {
+    console.log(this.state.id)
     return (
       <div className="container">
         <form onSubmit={(event) => this.props.handlePostEdit(event, this.state)}>

@@ -41,17 +41,22 @@ class CreatePostForm extends React.Component {
     console.log(this.props.cityDetails);
     return(
       <>
+
         <button className="nav-item" type="button"
         id="register" className="nav-link" data-toggle="modal" data-target="#createPostForm">Create Post</button>
+        
         <div className="modal fade" id="createPostForm" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div className="modal-dialog" role="document">
+
             <div className="modal-content">
-              <div className="modal-header">
+            <div className="container">
+              <div className="modal-header"> 
               <h5 className="modal-title" id="exampleModalLabel">Create Post</h5>
               <button type="button" className="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
               </button>
               </div>
+              
               <div className="modal-body"></div>
                 <form onSubmit={(event) => this.handleSubmit(event, this.state)}>
                   <div className="form-group">
@@ -75,6 +80,7 @@ class CreatePostForm extends React.Component {
               </form>
             </div>
           </div>
+        </div>
         </div>
       </>
     )
