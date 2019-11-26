@@ -24,8 +24,8 @@ class CreatePostForm extends React.Component {
       })
       .then(res => {
         console.log(res)
-        document.getElementById(`createPostForm`).style.display = 'none';
-        document.getElementsByClassName('modal-backdrop')[0].remove()
+        // document.getElementById(`createPostForm`).style.display = 'none';
+        // document.getElementsByClassName('modal-backdrop')[0].remove()
       })
       .catch(err => console.log(err));
   };
@@ -83,7 +83,7 @@ class CreatePostForm extends React.Component {
               </div>
               
               <div className="modal-body">
-                <form onSubmit={event => this.handleSubmit(event, this.state)}>
+                <form>
                   <div className="form-group">
                     <label htmlFor="title">Title</label>
                     <input
@@ -106,7 +106,7 @@ class CreatePostForm extends React.Component {
                       value={this.state.body}
                     ></textarea>
                   </div>
-                  <button className="btn btn-primary float-right" type="submit">
+                  <button data-dismiss="modal" onClick={event => this.handleSubmit(event, this.state)} className="btn btn-primary float-right" type="submit">
                     Create Post
                   </button>
                 </form>
