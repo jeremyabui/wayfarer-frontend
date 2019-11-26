@@ -22,25 +22,14 @@ const Post = props => {
         </div>
         <div className="col col-md-3  align-items-center">
           <div class="btn-group" role="group" aria-label="Basic example">
-          <button type="button"
-            className="btn btn-success btn-sm"
-            data-toggle="modal"
-            data-target="#exampleModalPost"
-          >
-            Edit
-          </button>
+          <button type="button" className="btn btn-primary btn-sm" data-toggle="modal"
+            data-target="#exampleModalPost"> Edit </button>
           {/* Delete */}
-          <button 
-            type="button"
-            className="btn btn-success btn-sm"
-            data-toggle="modal"
-            data-target="#deletePostModal">
-              Delete
-            </button>
+          <button type="button" className="btn btn-primary btn-sm" data-toggle="modal"
+            data-target="#deletePostModal"> Delete </button>
           </div>
         </div>
       </div>
-
       {/* <!-- Edit Post Modal --> */}
       <div
         className="modal fade"
