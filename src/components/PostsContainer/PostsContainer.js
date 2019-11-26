@@ -8,7 +8,7 @@ import axios from 'axios';
 class PostsContainer extends React.Component {
   state = {
     loaded: false,
-    posts: [...this.props.posts],
+    posts: [...this.props.posts].sort((a,b) => new Date(b.date) - new Date(a.date)),
     selectedPost: '',
   };
 
@@ -16,7 +16,7 @@ class PostsContainer extends React.Component {
     event.preventDefault();
     axios.post(`${process.env.REACT_APP_API_URL}/posts/newpost`, createdPost, { withCredentials: true })
     .then((res) => {
-      let newPosts = [...this.state.posts].concat(res.data.data)
+      let newPosts = [...this.state.posts].concat(res.data.data).sort((a,b) => new Date(b.date) - new Date(a.date))
       this.setState({
         posts: newPosts
       })
@@ -39,7 +39,7 @@ class PostsContainer extends React.Component {
           }
         })
         this.setState({
-          posts: [res.data.data,...filtered]
+          posts: [res.data.data,...filtered].sort((a,b) => new Date(b.date) - new Date(a.date))
         })
         document.getElementById(`exampleModalPost${postId}`).style.display = 'none';
         document.getElementsByClassName('modal-backdrop')[0].remove()

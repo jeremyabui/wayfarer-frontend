@@ -71,11 +71,12 @@ class CreatePostForm extends React.Component {
                         id="title"
                         name="title"
                         value={this.state.title}
+                        required
                       />
                     </div>
                     <div className="form-group">
                         <label htmlFor="body">Body</label>
-                        <textarea className="form-control" id="body" name="body" rows="3" onChange={this.handleChange} value={this.state.body}></textarea>
+                        <textarea className="form-control" id="body" name="body" rows="3" onChange={this.handleChange} value={this.state.body} required maxLength="200"></textarea>
                       </div>
                     <button className="btn btn-primary float-right" type="submit">
                     Create Post
