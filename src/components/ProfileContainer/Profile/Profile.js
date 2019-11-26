@@ -2,13 +2,11 @@ import React from "react";
 import UpdateProfile from "../Profile/EditProfile/UpdateProfile";
 
 const Profile = props => {
-  console.log(props.profile);
   const dateJoined = props.profile.createdAt;
 
   return (
-    <div>
+    <>
       <div className="profile-info-container">
-        <div>
           <h2>Hey, {props.profile.name}. Welcome back!</h2>
           <img
             className="profile-page-photo"
@@ -17,7 +15,6 @@ const Profile = props => {
           />
           <h5>Current City: {props.profile.currentCity}</h5>
           <h6>Date Joined: {dateJoined}</h6>
-        </div>
 
         {/* <!-- Button trigger modal --> */}
         <button
@@ -62,7 +59,7 @@ const Profile = props => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

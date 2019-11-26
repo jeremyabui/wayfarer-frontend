@@ -38,6 +38,7 @@ class CitiesContainer extends React.Component {
             setCurrentCity={this.setCurrentCity}
             cityData={city}
             key={city._id}
+            currentUser={this.props.currentUser}
           />
         </>
       );

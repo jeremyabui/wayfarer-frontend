@@ -73,6 +73,9 @@ class CreatePostForm extends React.Component {
                       id="title"
                       name="title"
                       value={this.state.title}
+                      required
+                      minLength="1"
+                      maxLength="200"
                     />
                   </div>
                   <div className="form-group">
@@ -84,6 +87,8 @@ class CreatePostForm extends React.Component {
                       rows="3"
                       onChange={this.handleChange}
                       value={this.state.body}
+                      required
+                      minLength="1"
                     ></textarea>
                   </div>
                   <button data-dismiss="modal" onClick={event => this.props.handleSubmit(event, this.state)} className="btn btn-primary float-right" type="submit">

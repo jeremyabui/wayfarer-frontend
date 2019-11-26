@@ -5,6 +5,8 @@ import "../../ProfileContainer/Profile.css";
 
 import ConfirmDelete from './ConfirmDelete/ConfirmDelete'
 
+import './Post.css'
+
 const Post = props => {
   // console.log(props)
   let link = `posts/${props.postData._id}`;
@@ -16,23 +18,27 @@ const Post = props => {
       <Link className="profile-posts-content" to={link}>
         {props.postData.title}
       </Link>
+
+      { localStorage.getItem('uid')===props.postData.author && 
       <button
         type="button"
-        className="btn btn-success btn-sm"
+        className="btn btn-success btn-sm post-edit-button"
         data-toggle="modal"
         data-target={`#exampleModalPost${props.postData._id}`}
       >
         Edit
       </button>
-
+      }
       {/* Delete */}
-      <button 
+      { localStorage.getItem('uid')===props.postData.author && <button 
         type="button"
-        className="btn btn-success btn-sm"
+        className="btn btn-success btn-sm post-delete-button"
         data-toggle="modal"
         data-target={`#deletePostModal${props.postData._id}`}>
           Delete
       </button>
+}
+      
 
       {/* <!-- Edit Post Modal --> */}
       <div
@@ -83,7 +89,7 @@ const Post = props => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="deletePostModalLabel">
-              Delete "{postTitle}"?
+              Are you sure you want to delete "{postTitle}"?
               </h5>
               <button
                 type="button"
