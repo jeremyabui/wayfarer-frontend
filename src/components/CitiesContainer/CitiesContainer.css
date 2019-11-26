@@ -1,12 +1,6 @@
 
-
 .cities-explore {
   color: aliceblue;
-}
-
-/* main conatiner */
-.container-fluid{
-  background: rgb(0, 255, 238);
 }
 
 .city-list {
@@ -14,8 +8,8 @@
   color: aliceblue;
 }
 
-.city-item {
-  margin: 30px auto;
+li {
+ list-style: none;
 }
 
 .city-item:hover {
@@ -24,12 +18,13 @@
 }
 
 .city-detail-name {
-  color: aliceblue;
+  color: black;
 }
 
 .city-detail-description {
-  color: aliceblue;
+  color: black;
 }
+
 .city-detail-image {
   width: auto;
   height: 30vh;
@@ -38,7 +33,14 @@
 
 .explore{
   text-align: center;
+  color: black;
 }
+
+.profile-posts-content{
+color: black;
+font-size: 20px;
+}
+
 
 .myVideo {
   position: fixed;

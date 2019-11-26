@@ -37,13 +37,7 @@ class CityDetailContainer extends React.Component {
         })
         .catch((err) => console.log(err));
     }
-
-      // if (prevProps.posts !== this.props.posts) {
-      //   this.setState({
-      //     posts: this.props.posts
-      //   })
-      // }
-    }
+  }
   
   render() {
     return (
