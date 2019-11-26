@@ -12,6 +12,7 @@ class PostsContainer extends React.Component {
   };
 
   handlePostEdit = (event, updatedPost) => {
+    console.log('calling edit')
     let postId = `${updatedPost.id}`
     event.preventDefault();
     axios.put(`${process.env.REACT_APP_API_URL}/posts/${postId}`, updatedPost, { withCredentials: true }
@@ -26,8 +27,9 @@ class PostsContainer extends React.Component {
         this.setState({
           posts: [res.data.data,...filtered]
         })
-        document.getElementById(`exampleModalPost${postId}`).style.display = 'none';
-        document.getElementsByClassName('modal-backdrop')[0].remove()
+        // document.getElementById(`exampleModalPost${postId}`).style.display = 'none';
+        // document.getElementsByClassName('modal-backdrop')[0].remove()
+        // document.getElementById(`deletePostModal${postId}`).setAttribute('data-dismiss','modal');
       })
       .catch((err) => console.log(err));
   };
@@ -46,7 +48,8 @@ class PostsContainer extends React.Component {
       this.setState({
         posts: [...filtered]
       })
-      document.getElementsByClassName('modal-backdrop')[0].remove();
+      // document.getElementsByClassName('modal-backdrop')[0].remove();
+      // document.getElementById(`deletePostModal${postId}`).setAttribute('data-dismiss','modal');
     })
     .catch((err) => console.log(err));
   }
