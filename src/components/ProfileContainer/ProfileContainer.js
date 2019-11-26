@@ -62,12 +62,12 @@ class ProfileContainer extends React.Component {
   render() {
     return (
       <>
-        <video width="100%"
+        {/* <video width="100%"
           className="video-background"
           autoPlay={true}
           loop={true}
           src={video2}
-        ></video>
+        ></video> */}
         {/* <img className="profile-img-background" src={img1} /> */}
         <div className="profile-container">
           {this.state.loaded && (
