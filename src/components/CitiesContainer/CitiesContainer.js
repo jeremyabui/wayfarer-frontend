@@ -2,6 +2,7 @@ import React from "react";
 import City from "./City/City";
 import CityDetailContainer from "./CityDetailContainer/CityDetailContainer";
 import axios from "axios";
+import video2 from "./assets/gardenVideo.mp4";
 import "./CitiesContainer.css";
 
 class CitiesContainer extends React.Component {
@@ -45,11 +46,22 @@ class CitiesContainer extends React.Component {
 
   render() {
     return (
-      <section className="cities-container">
-        <div className="city-list">
-          {this.displayCities(this.state.citiesData)}
+      <section>
+        <div className="cities-explore">
+          <video
+            className="video-background"
+            autoPlay={true}
+            loop={true}
+            src={video2}
+          ></video>
+          <h1>EXPLORE</h1>
         </div>
-        <CityDetailContainer selectedCity={this.state.selectedCity} />
+        <div className="cities-container">
+          <div className="city-list">
+            {this.displayCities(this.state.citiesData)}
+          </div>
+          <CityDetailContainer selectedCity={this.state.selectedCity} />
+        </div>
       </section>
     );
   }

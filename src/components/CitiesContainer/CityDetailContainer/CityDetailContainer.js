@@ -13,7 +13,7 @@ class CityDetailContainer extends React.Component {
   };
 
   componentDidUpdate(prevProps) {
-    if(prevProps.selectedCity !== this.props.selectedCity) {
+    if (prevProps.selectedCity !== this.props.selectedCity) {
       axios.get(`${process.env.REACT_APP_API_URL}/cities/${this.props.selectedCity}`, {
         withCredentials: true 
       })
@@ -25,8 +25,14 @@ class CityDetailContainer extends React.Component {
         })
         .catch((err) => console.log(err));
     }
-  }
 
+      // if (prevProps.posts !== this.props.posts) {
+      //   this.setState({
+      //     posts: this.props.posts
+      //   })
+      // }
+    }
+  
   render() {
     return (
       <section className="city-detail-container">
@@ -36,5 +42,6 @@ class CityDetailContainer extends React.Component {
     );
   }
 }
+
 
 export default CityDetailContainer;
