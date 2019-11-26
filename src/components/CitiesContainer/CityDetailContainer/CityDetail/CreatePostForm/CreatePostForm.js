@@ -15,20 +15,20 @@ class CreatePostForm extends React.Component {
     });
   };
 
-  // handleSubmit = event => {
-  //   event.preventDefault();
-  //   console.log(this.state);
-  //   axios
-  //     .post(`${process.env.REACT_APP_API_URL}/posts/newpost`, this.state, {
-  //       withCredentials: true
-  //     })
-  //     .then(res => {
-  //       console.log(res)
-  //       // document.getElementById(`createPostForm`).style.display = 'none';
-  //       // document.getElementsByClassName('modal-backdrop')[0].remove()
-  //     })
-  //     .catch(err => console.log(err));
-  // };
+  handleSubmit = event => {
+    event.preventDefault();
+    console.log(this.state);
+    axios
+      .post(`${process.env.REACT_APP_API_URL}/posts/newpost`, this.state, {
+        withCredentials: true
+      })
+      .then(res => {
+        console.log(res)
+        // document.getElementById(`createPostForm`).style.display = 'none';
+        // document.getElementsByClassName('modal-backdrop')[0].remove()
+      })
+      .catch(err => console.log(err));
+  };
 
   componentDidMount() {
       this.setState({
@@ -91,7 +91,7 @@ class CreatePostForm extends React.Component {
                       minLength="1"
                     ></textarea>
                   </div>
-                  <button data-dismiss="modal" onClick={event => this.props.handleSubmit(event, this.state)} className="btn btn-primary float-right" type="submit">
+                  <button data-dismiss="modal" onClick={event => this.handleSubmit(event, this.state)} className="btn btn-primary float-right" type="submit">
                     Create Post
                   </button>
                 </form>
