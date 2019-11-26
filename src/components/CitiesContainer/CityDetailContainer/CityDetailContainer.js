@@ -37,7 +37,7 @@ class CityDetailContainer extends React.Component {
     return (
       <section className="city-detail-container">
         <CityDetail cityDetails={this.state.cityDetails} />
-        {this.state.cityDetails && <PostsContainer posts={this.state.cityDetails.posts} /> }
+        {this.state.cityDetails && <PostsContainer posts={this.state.cityDetails.posts} cityDetails={this.state.cityDetails} /> }
       </section>
     );
   }

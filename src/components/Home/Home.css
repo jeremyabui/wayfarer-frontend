@@ -1,0 +1,15 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  background: rgb(101, 158, 116);
+  color: aliceblue;
+  width: 100%;
+  padding: 80px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.parks-around {
+  margin-bottom: 60px;
+  align-self: center;
+}
