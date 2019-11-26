@@ -2,14 +2,29 @@ import React from 'react';
 // import axios from 'axios';
 
 import Post from './Post/Post';
+import CreatePostForm from '../CitiesContainer/CityDetailContainer/CityDetail/CreatePostForm/CreatePostForm';
 import axios from 'axios';
 
 class PostsContainer extends React.Component {
   state = {
     loaded: false,
-    posts: [...this.props.posts],
+    posts: [...this.props.posts].sort((a,b) => new Date(b.date) - new Date(a.date)),
     selectedPost: '',
   };
+
+  handleSubmit = (event, createdPost) => {
+    event.preventDefault();
+    axios.post(`${process.env.REACT_APP_API_URL}/posts/newpost`, createdPost, { withCredentials: true })
+    .then((res) => {
+      let newPosts = [...this.state.posts].concat(res.data.data).sort((a,b) => new Date(b.date) - new Date(a.date))
+      this.setState({
+        posts: newPosts
+      })
+      document.getElementById(`createPostForm`).style.display = 'none';
+      document.getElementsByClassName('modal-backdrop')[0].remove()
+    })
+    .catch((err) => console.log(err));
+  }
 
   handlePostEdit = (event, updatedPost) => {
     console.log('calling edit')
@@ -25,7 +40,7 @@ class PostsContainer extends React.Component {
           }
         })
         this.setState({
-          posts: [res.data.data,...filtered]
+          posts: [res.data.data,...filtered].sort((a,b) => new Date(b.date) - new Date(a.date))
         })
         // document.getElementById(`exampleModalPost${postId}`).style.display = 'none';
         // document.getElementsByClassName('modal-backdrop')[0].remove()
@@ -63,11 +78,11 @@ class PostsContainer extends React.Component {
   };
 
 
-
   render() {
     console.log(this.props.posts)
     return (
       <>
+        {this.props.cityDetails && <CreatePostForm handleSubmit={this.handleSubmit} cityDetails={this.props.cityDetails} /> }
         {this.displayPosts(this.state.posts)}
       </>
     )
