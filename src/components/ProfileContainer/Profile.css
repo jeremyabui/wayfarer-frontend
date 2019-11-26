@@ -1,15 +1,17 @@
 .profile-container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-around;
   padding: 6%;
+  flex-wrap: wrap;
 }
 
 .profile-info-container {
   display: flex;
   flex-direction: column;
   padding: 2%;
-  position: fixed;
   color: white;
+  width: 300px;
 }
 
 .profile-posts-content {
@@ -17,4 +19,12 @@
   text-decoration: none;
   color: whitesmoke;
   font-size: 50px;
+}
+
+.profile-posts-container {
+
+}
+
+.profile-posts-content:hover {
+  text-decoration: none;
 }

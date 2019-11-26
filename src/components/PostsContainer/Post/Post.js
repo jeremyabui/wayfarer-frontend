@@ -5,6 +5,8 @@ import "../../ProfileContainer/Profile.css";
 
 import ConfirmDelete from './ConfirmDelete/ConfirmDelete'
 
+import './Post.css'
+
 const Post = props => {
   // console.log(props)
   let link = `posts/${props.postData._id}`;
@@ -20,7 +22,7 @@ const Post = props => {
       { localStorage.getItem('uid')===props.postData.author && 
       <button
         type="button"
-        className="btn btn-success btn-sm"
+        className="btn btn-success btn-sm post-edit-button"
         data-toggle="modal"
         data-target={`#exampleModalPost${props.postData._id}`}
       >
@@ -30,7 +32,7 @@ const Post = props => {
       {/* Delete */}
       { localStorage.getItem('uid')===props.postData.author && <button 
         type="button"
-        className="btn btn-success btn-sm"
+        className="btn btn-success btn-sm post-delete-button"
         data-toggle="modal"
         data-target={`#deletePostModal${props.postData._id}`}>
           Delete

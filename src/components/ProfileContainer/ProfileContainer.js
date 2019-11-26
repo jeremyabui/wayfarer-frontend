@@ -62,7 +62,7 @@ class ProfileContainer extends React.Component {
   render() {
     return (
       <>
-        <video
+        <video width="100%"
           className="video-background"
           autoPlay={true}
           loop={true}
@@ -76,11 +76,9 @@ class ProfileContainer extends React.Component {
               handleUpdate={this.handleUpdate}
             />
           )}
-          <div>
             {this.state.loaded && (
               <PostsContainer posts={this.state.profile.posts} />
             )}
-          </div>
         </div>
       </>
     );

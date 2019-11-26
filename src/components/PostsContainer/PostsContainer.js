@@ -72,19 +72,20 @@ class PostsContainer extends React.Component {
   displayPosts = (posts) => {
     return posts.map((post) => {
       return (
-        <Post key={post._id} postData={post} handlePostEdit={this.handlePostEdit} deletePost={this.deletePost}/>
+        <div className="post" key={post._id}>
+        <Post  postData={post} handlePostEdit={this.handlePostEdit} deletePost={this.deletePost}/>
+        </div>
       )
     })
   };
 
 
   render() {
-    console.log(this.props.posts)
     return (
-      <>
+      <div className="profile-posts-container">
         {localStorage.getItem('uid') && this.props.cityDetails && <CreatePostForm handleSubmit={this.handleSubmit} cityDetails={this.props.cityDetails} currentUser={this.props.currentUser} /> }
         {this.displayPosts(this.state.posts)}
-      </>
+      </div>
     )
   }
 }
