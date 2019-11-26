@@ -27,7 +27,11 @@ export default ({ currentUser, setCurrentUser }) => (
       )}
     />
     <Route path="/profile" component={ProfileContainer} />
-    <Route path="/cities" component={CitiesContainer} />
+    <Route path="/cities" 
+      render={() => (
+        <CitiesContainer currentUser={currentUser} />
+      )} 
+    />
     <Route path="/cities/:id" component={CityDetailContainer} />
     <Route path="/posts/:id" component={PostDetailContainer} />
   </Switch>

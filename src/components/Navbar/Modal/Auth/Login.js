@@ -24,8 +24,8 @@ class  Login extends Component {
     .then((res) => {
       console.log(res)
       this.props.setCurrentUser(res.data.data);
-      document.getElementById('exampleModal2').style.display = 'none';
-      document.getElementsByClassName('modal-backdrop')[0].remove()
+      // document.getElementById('exampleModal2').style.display = 'none';
+      // document.getElementsByClassName('modal-backdrop')[0].remove()
       this.props.history.push('/cities');
     })
     .catch((err) => console.log(err));
@@ -36,7 +36,7 @@ class  Login extends Component {
       <div className="container mt-4">
         <div className="row">
           <div className="col-md-4 offset-md-4">
-            <form onSubmit={this.handleSubmit}>
+            <form>
               <div className="form-group">
                 <label htmlFor="name">Username</label>
                 <input onChange={this.handleChange} className="form-control form-control-lg" type="text" id="userName" name="username" />
@@ -45,7 +45,7 @@ class  Login extends Component {
                 <label htmlFor="password">Password</label>
                 <input onChange={this.handleChange} className="form-control form-control-lg" type="password" id="Password" name="password" />
               </div>
-              <button className="btn btn-primary float-right" type="submit">Login</button>
+              <button data-dismiss="modal" onClick={this.handleSubmit} className="btn btn-primary float-right" type="submit">Login</button>
             </form>
           </div>
         </div>

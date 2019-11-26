@@ -5,8 +5,13 @@ import "../../ProfileContainer/Profile.css";
 
 import ConfirmDelete from './ConfirmDelete/ConfirmDelete'
 
+import './Post.css'
+
 const Post = props => {
+  // console.log(props)
   let link = `posts/${props.postData._id}`;
+  let postId = `${props.postData._id}`
+  let postTitle = `${props.postData.title}`
   return (
     <div className="col col-md-12 profile-posts-container" id={props.postData._id} onClick={props.setSelectedPost}>
       <div className="row  align-items-center">
@@ -39,7 +44,7 @@ const Post = props => {
       {/* <!-- Edit Post Modal --> */}
       <div
         className="modal fade"
-        id="exampleModalPost"
+        id={`exampleModalPost${props.postData._id}`}
         tabIndex="-1"
         role="dialog"
         aria-labelledby="exampleModalLabel"
@@ -75,7 +80,7 @@ const Post = props => {
       {/* <!-- Delete Post Modal --> */}
       <div
         className="modal fade"
-        id="deletePostModal"
+        id={`deletePostModal${props.postData._id}`}
         tabIndex="-1"
         role="dialog"
         aria-labelledby="deletePostModalLabel"
@@ -85,7 +90,7 @@ const Post = props => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="deletePostModalLabel">
-                Delete Post
+              Are you sure you want to delete "{postTitle}"?
               </h5>
               <button
                 type="button"

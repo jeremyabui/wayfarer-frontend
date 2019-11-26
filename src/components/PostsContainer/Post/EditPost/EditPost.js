@@ -18,7 +18,7 @@ class EditPost extends React.Component {
   render() {
     return (
       <div className="container">
-        <form onSubmit={(event) => this.props.handlePostEdit(event, this.state)}>
+        <form>
           <div className="form-group">
             <label htmlFor="title">Title</label>
             <input onChange={this.handleChange} type="text" className="form-control" id="post-title" placeholder="tacky title" name="title" />
@@ -27,7 +27,7 @@ class EditPost extends React.Component {
             <label htmlFor="body">Body</label>
             <textarea onChange={this.handleChange} className="form-control" id="post-body" rows="3" name="body"></textarea>
           </div>
-          <button type="submit" className="btn btn-primary float-right">Save</button>
+          <button data-dismiss="modal" type="submit" className="btn btn-primary float-right" onClick={(event) => this.props.handlePostEdit(event, this.state)}>Save</button>
         </form>
       </div>
     )
