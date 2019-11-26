@@ -27,7 +27,6 @@ class PostDetailContainer extends React.Component {
     
     return (
       <div className="container">
-        <h2>POST DETAIL</h2>
         {this.state.postDetail && <PostDetail postDetail={this.state.postDetail} />}
       </div>
     ) 

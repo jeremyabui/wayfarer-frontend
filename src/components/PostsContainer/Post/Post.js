@@ -17,12 +17,12 @@ const Post = props => {
     <div className="post-container" id={props.postData._id} onClick={props.setSelectedPost}>
       <hr/>
       {/* <div className="row"> */}
-      <div className="col col-sm-6 col-md-4">
+      <div className="col col-sm-6 col-md-8">
       <Link className="profile-posts-content" to={link}>
         {props.postData.title}
       </Link>
       </div>
-      <div className="buttonz justify-content-end col-sm-6 col-md-8">
+      <div className="buttonz justify-content-end col-sm-6 col-md-4">
       { localStorage.getItem('uid')===props.postData.author && 
       <button
         type="button"

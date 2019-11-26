@@ -16,7 +16,7 @@
 }
 
 .post-container {
-  color: whitesmoke;
+  color: black;
   display: flex;
   align-items: center;
   height: 100px;
@@ -29,3 +29,26 @@
 /* .buttonz {
   float: right;
 } */
+
+.post-detail {
+  background-color: rgba(104,104,104, 0.9);
+  margin-top: 50px;
+  border-radius: 10px;
+}
+
+.post-detail-author {
+  color: white;
+  text-align: center;
+}
+
+.post-detail-body {
+  color: white;
+  margin: 20px 100px;
+  font-size: 18px;
+}
+
+.post-detail-title {
+  color: white;
+  text-align: center;
+  font-size: 60px;
+}
