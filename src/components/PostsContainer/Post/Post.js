@@ -6,7 +6,10 @@ import "../../ProfileContainer/Profile.css";
 import ConfirmDelete from './ConfirmDelete/ConfirmDelete'
 
 const Post = props => {
+  // console.log(props)
   let link = `posts/${props.postData._id}`;
+  let postId = `${props.postData._id}`
+  let postTitle = `${props.postData.title}`
   return (
     <div className="profile-posts-container" id={props.postData._id} onClick={props.setSelectedPost}>
       <hr/>
@@ -80,7 +83,7 @@ const Post = props => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="deletePostModalLabel">
-                Delete Post
+              Delete "{postTitle}"?
               </h5>
               <button
                 type="button"

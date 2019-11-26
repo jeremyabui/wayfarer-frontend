@@ -4,6 +4,7 @@ import { Link, withRouter } from "react-router-dom";
 class confirmDelete extends React.Component {
   state = {
     id: this.props.postData._id,
+    title: this.props.postData.title
 
   }
   render() {

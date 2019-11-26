@@ -22,7 +22,11 @@ class CreatePostForm extends React.Component {
       .post(`${process.env.REACT_APP_API_URL}/posts/newpost`, this.state, {
         withCredentials: true
       })
-      .then(res => console.log(res))
+      .then(res => {
+        console.log(res)
+        document.getElementById(`createPostForm`).style.display = 'none';
+        document.getElementsByClassName('modal-backdrop')[0].remove()
+      })
       .catch(err => console.log(err));
   };
 
@@ -62,6 +66,7 @@ class CreatePostForm extends React.Component {
           aria-hidden="true"
         >
           <div className="modal-dialog" role="document">
+
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">
@@ -76,52 +81,32 @@ class CreatePostForm extends React.Component {
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <div className="modal-body"></div>
-              <form onSubmit={event => this.handleSubmit(event, this.state)}>
-                <div className="form-group">
-                  <label htmlFor="title">Title</label>
-                  <input
-                    onChange={this.handleChange}
-                    className="form-control form-control-lg"
-                    type="text"
-                    id="title"
-                    name="title"
-                    value={this.state.title}
-                  />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="body">Body</label>
-                  <textarea
-                    className="form-control"
-                    id="body"
-                    name="body"
-                    rows="3"
-                    onChange={this.handleChange}
-                    value={this.state.body}
-                  ></textarea>
-                </div>
-                <button className="btn btn-primary float-right" type="submit">
-                  Create Post
-                </button>
-                </div>
-                <div className="modal-body"></div>
-                  <form onSubmit={(event) => this.handleSubmit(event, this.state)}>
-                    <div className="form-group">
-                      <label htmlFor="title">Title</label>
-                      <input
-                        onChange={this.handleChange}
-                        className="form-control form-control-lg"
-                        type="text"
-                        id="title"
-                        name="title"
-                        value={this.state.title}
-                      />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="body">Body</label>
-                        <textarea className="form-control" id="body" name="body" rows="3" onChange={this.handleChange} value={this.state.body}></textarea>
-                      </div>
-                    <button className="btn btn-primary float-right" type="submit">
+              
+              <div className="modal-body">
+                <form onSubmit={event => this.handleSubmit(event, this.state)}>
+                  <div className="form-group">
+                    <label htmlFor="title">Title</label>
+                    <input
+                      onChange={this.handleChange}
+                      className="form-control form-control-lg"
+                      type="text"
+                      id="title"
+                      name="title"
+                      value={this.state.title}
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="body">Body</label>
+                    <textarea
+                      className="form-control"
+                      id="body"
+                      name="body"
+                      rows="3"
+                      onChange={this.handleChange}
+                      value={this.state.body}
+                    ></textarea>
+                  </div>
+                  <button className="btn btn-primary float-right" type="submit">
                     Create Post
                   </button>
                 </form>
