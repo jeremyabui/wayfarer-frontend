@@ -14,7 +14,7 @@ const Profile = props => {
             alt={props.profile.name + `'s profile picture`}
           />
           <h5>Current City: {props.profile.currentCity}</h5>
-          <h6>Date Joined: {dateJoined}</h6>
+          <h6>Date Joined: {dateJoined.substring(0,10)}</h6>
 
         {/* <!-- Button trigger modal --> */}
         <button

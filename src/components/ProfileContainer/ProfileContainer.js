@@ -76,9 +76,9 @@ class ProfileContainer extends React.Component {
               handleUpdate={this.handleUpdate}
             />
           )}
-            {this.state.loaded && (
+            {this.state.loaded && 
               <PostsContainer posts={this.state.profile.posts} />
-            )}
+            }
         </div>
       </>
     );

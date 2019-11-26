@@ -18,8 +18,8 @@ const Post = props => {
       <hr/>
       <Link className="profile-posts-content" to={link}>
         {props.postData.title}
-      </Link>
-
+      </Link>"
+      <div className="buttonz">
       { localStorage.getItem('uid')===props.postData.author && 
       <button
         type="button"
@@ -39,6 +39,7 @@ const Post = props => {
           Delete
       </button>
 }
+</div>
       {/* <!-- Edit Post Modal --> */}
       <div
         className="modal fade"
