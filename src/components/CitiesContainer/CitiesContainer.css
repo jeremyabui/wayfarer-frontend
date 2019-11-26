@@ -1,0 +1,51 @@
+
+.cities-explore {
+  color: aliceblue;
+}
+
+.city-list {
+  background: rgba(100, 100, 100, 0.6);
+  color: aliceblue;
+}
+
+li {
+  list-style: none;
+}
+
+.city-item:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.city-detail-name {
+  color: black;
+}
+
+.city-detail-description {
+  color: black;
+}
+
+.city-detail-image {
+  width: auto;
+  height: 30vh;
+  object-fit: cover;
+}
+
+.explore{
+  text-align: center;
+  color: whitesmoke;
+}
+
+.profile-posts-content{
+font-size: 20px;
+}
+
+
+.myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}

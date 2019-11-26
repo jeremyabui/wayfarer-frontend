@@ -1,0 +1,36 @@
+.profile-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 6%;
+  flex-wrap: wrap;
+}
+
+.profile-info-container {
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+  color: white;
+  width: 300px;
+}
+
+.profile-posts-content {
+  margin: 0px;
+  margin-left: 10px;
+  text-decoration: none;
+  color: whitesmoke;
+  font-size: 32px;
+}
+
+.profile-posts-content a {
+  color: white !important;
+}
+
+.profile-posts-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-posts-content:hover {
+  text-decoration: none;
+}

@@ -32,8 +32,8 @@ class Register extends React.Component {
         password: '',
         password2: '',
       });
-      document.getElementById('exampleModal').style.display = 'none';
-      document.getElementsByClassName('modal-backdrop')[0].remove()
+      // document.getElementById('exampleModal').style.display = 'none';
+      // document.getElementsByClassName('modal-backdrop')[0].remove()
       this.props.history.push('/login');
     })
     .catch((err) => console.log(err))
@@ -43,7 +43,7 @@ class Register extends React.Component {
   render() {
     return (
       <>
-        <form onSubmit={this.handleSubmit}>
+        <form>
           <div className="form-group">
             <label htmlFor="name">Name</label>
             <input
@@ -53,7 +53,7 @@ class Register extends React.Component {
               id="name"
               name="name"
               value={this.state.name}
-            />
+              required />
           </div>
           <div className="form-group">
             <label htmlFor="username">Username</label>
@@ -64,6 +64,7 @@ class Register extends React.Component {
               id="Username"
               name="username"
               value={this.state.username}
+              required
             />
           </div>
           <div className="form-group">
@@ -75,6 +76,7 @@ class Register extends React.Component {
               id="email"
               name="email"
               value={this.state.email}
+              required
             />
           </div>
           <div className="form-group">
@@ -86,6 +88,7 @@ class Register extends React.Component {
               id="password"
               name="password"
               value={this.state.password}
+              required
             />
           </div>
           <div className="form-group">
@@ -97,9 +100,10 @@ class Register extends React.Component {
               id="password2"
               name="password2"
               value={this.state.password2}
+              required
             />
           </div>
-          <button className="btn btn-primary float-right" type="submit">
+          <button data-dismiss="modal" onClick={this.handleSubmit} className="btn btn-primary float-right" type="submit">
             Register
           </button>
         </form>

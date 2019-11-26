@@ -17,9 +17,6 @@ class Navbar  extends Component {
   
             <div className="collapse navbar-collapse" id="navbarsExample04">
               <ul className="navbar-nav ml-auto">
-                <li className="nav-item">
-                  <NavLink className="nav-link" exact to="/">Home</NavLink>
-                </li>
 
                 {!this.props.currentUser ? 
                 <>
@@ -32,14 +29,16 @@ class Navbar  extends Component {
                 </> : 
                   <>
                     <li className="nav-item">
+                      <NavLink className="nav-link" exact to="/cities">Home</NavLink>
+                    </li>
+                    <li className="nav-item">
                       <NavLink className="nav-link" to="/profile">Profile</NavLink>
                     </li>
                     <li className="nav-item">
-                      <NavLink onClick={this.props.logout} className="nav-link" to="/">Logout</NavLink>
+                      <NavLink data-toggle="modal" onClick={this.props.logout} className="nav-link" to="/">Logout</NavLink>
                     </li>
                   </>
                 }
-
               </ul>
               <Modal currentUser={this.props.currentUser} setCurrentUser={this.props.setCurrentUser}/>
             </div>

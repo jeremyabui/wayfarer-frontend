@@ -1,0 +1,11 @@
+.navbar {
+  background: rgba(132,242,12, 0.4) !important;
+}
+
+.navbar-brand {
+  font-family: 'Raleway'
+}
+
+/* .modal-backdrop {
+display: none;
+} */

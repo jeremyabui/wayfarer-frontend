@@ -17,7 +17,7 @@ class Modal extends React.Component {
   
   render() {
     return (
-     <>
+    <>
     {/* Register Modal */}
         {!this.state.closeRegister && <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div className="modal-dialog" role="document">
@@ -51,7 +51,7 @@ class Modal extends React.Component {
           </div>
         </div>
       </div>
-     </>
+    </>
     );
   };
 };
