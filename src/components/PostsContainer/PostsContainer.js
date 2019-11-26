@@ -20,6 +20,8 @@ class PostsContainer extends React.Component {
       this.setState({
         posts: newPosts
       })
+      document.getElementById(`createPostForm`).style.display = 'none';
+      document.getElementsByClassName('modal-backdrop')[0].remove()
     })
     .catch((err) => console.log(err));
   }
@@ -39,9 +41,8 @@ class PostsContainer extends React.Component {
         this.setState({
           posts: [res.data.data,...filtered]
         })
-        document.getElementById('exampleModalPost').style.display = 'none';
+        document.getElementById(`exampleModalPost${postId}`).style.display = 'none';
         document.getElementsByClassName('modal-backdrop')[0].remove()
-        this.props.history.push('/cities');
       })
       .catch((err) => console.log(err));
   };
@@ -52,15 +53,20 @@ class PostsContainer extends React.Component {
     axios.delete(`${process.env.REACT_APP_API_URL}/posts/deletePost/${postId}`, { withCredentials: true })
     .then((res) => {
       console.log(res)
-      document.getElementById('deletePostModal').style.display = 'none';
-      document.getElementsByClassName('modal-backdrop')[0].remove()
-      this.props.history.push('/cities');
+      const filtered = this.state.posts.filter(post => {
+        if(post._id !== res.data.data._id) {
+          return post
+        }
+      })
+      this.setState({
+        posts: [...filtered]
+      })
+      document.getElementsByClassName('modal-backdrop')[0].remove();
     })
     .catch((err) => console.log(err));
   }
 
   displayPosts = (posts) => {
-    // console.log(posts)
     return posts.map((post) => {
       return (
         <Post key={post._id} postData={post} handlePostEdit={this.handlePostEdit} deletePost={this.deletePost}/>
