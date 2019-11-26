@@ -70,8 +70,9 @@ const Carousel = () => {
       </div>
 
       {/* content */}
-      <div className="container marketing">
+      <div className="home-container">
         {/* <!-- Three columns of text below the carousel --> */}
+        <h1 className="parks-around">Check Out Parks All Around The World!</h1>
         <div className="row">
           <div className="col-lg-4">
             <h2>New York</h2>
