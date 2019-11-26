@@ -35,7 +35,7 @@ class Navbar  extends Component {
                       <NavLink className="nav-link" to="/profile">Profile</NavLink>
                     </li>
                     <li className="nav-item">
-                      <NavLink onClick={this.props.logout} className="nav-link" to="/">Logout</NavLink>
+                      <NavLink data-toggle="modal" onClick={this.props.logout} className="nav-link" to="/">Logout</NavLink>
                     </li>
                   </>
                 }
