@@ -82,7 +82,7 @@ class PostsContainer extends React.Component {
     console.log(this.props.posts)
     return (
       <>
-        {this.props.cityDetails && <CreatePostForm handleSubmit={this.handleSubmit} cityDetails={this.props.cityDetails} /> }
+        {localStorage.getItem('uid') && this.props.cityDetails && <CreatePostForm handleSubmit={this.handleSubmit} cityDetails={this.props.cityDetails} currentUser={this.props.currentUser} /> }
         {this.displayPosts(this.state.posts)}
       </>
     )

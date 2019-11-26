@@ -16,6 +16,8 @@ const Post = props => {
       <Link className="profile-posts-content" to={link}>
         {props.postData.title}
       </Link>
+
+      { localStorage.getItem('uid')===props.postData.author && 
       <button
         type="button"
         className="btn btn-success btn-sm"
@@ -24,15 +26,17 @@ const Post = props => {
       >
         Edit
       </button>
-
+      }
       {/* Delete */}
-      <button 
+      { localStorage.getItem('uid')===props.postData.author && <button 
         type="button"
         className="btn btn-success btn-sm"
         data-toggle="modal"
         data-target={`#deletePostModal${props.postData._id}`}>
           Delete
       </button>
+}
+      
 
       {/* <!-- Edit Post Modal --> */}
       <div
@@ -83,7 +87,7 @@ const Post = props => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="deletePostModalLabel">
-              Delete "{postTitle}"?
+              Are you sure you want to delete "{postTitle}"?
               </h5>
               <button
                 type="button"
