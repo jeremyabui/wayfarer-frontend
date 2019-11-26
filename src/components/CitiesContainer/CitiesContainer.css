@@ -1,27 +1,17 @@
-.cities-container {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 25px;
-  /* background-image: url("https://images.unsplash.com/photo-1415356838286-df6fd593e8b3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"); */
-}
+
 
 .cities-explore {
-  display: flex;
-  justify-content: space-around;
-  padding: 30px;
-  /* background-image: url("https://images.unsplash.com/photo-1504672281656-e4981d70414b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"); */
   color: aliceblue;
-  height: 200px;
+}
+
+/* main conatiner */
+.container-fluid{
+  background: rgb(0, 255, 238);
 }
 
 .city-list {
-  min-width: 200px;
-  margin: 100px auto;
-  font-size: 50px;
-  color: aliceblue;
   background: rgba(100, 100, 100, 0.6);
-  text-align: center;
-  padding: 40px;
+  color: aliceblue;
 }
 
 .city-item {
@@ -41,8 +31,19 @@
   color: aliceblue;
 }
 .city-detail-image {
-  width: 1000px;
-  height: 500px;
-  overflow: hidden;
+  width: auto;
+  height: 30vh;
+  object-fit: cover;
+}
+
+.explore{
   text-align: center;
+}
+
+.myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
 }

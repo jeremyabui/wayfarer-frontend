@@ -47,10 +47,10 @@ class CityDetailContainer extends React.Component {
   
   render() {
     return (
-      <section className="city-detail-container">
+      <div className=" city-detail-container">
         <CityDetail cityDetails={this.state.cityDetails} />
         {this.state.cityDetails && <PostsContainer posts={this.state.cityDetails.posts} cityDetails={this.state.cityDetails} currentUser={this.props.currentUser} /> }
-      </section>
+      </div>
     );
   }
 }

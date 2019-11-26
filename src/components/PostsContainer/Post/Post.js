@@ -13,32 +13,33 @@ const Post = props => {
   let postId = `${props.postData._id}`
   let postTitle = `${props.postData.title}`
   return (
-    <div className="profile-posts-container" id={props.postData._id} onClick={props.setSelectedPost}>
-      <hr/>
-      <Link className="profile-posts-content" to={link}>
-        {props.postData.title}
-      </Link>
-
-      { localStorage.getItem('uid')===props.postData.author && 
-      <button
-        type="button"
-        className="btn btn-success btn-sm post-edit-button"
-        data-toggle="modal"
-        data-target={`#exampleModalPost${props.postData._id}`}
-      >
-        Edit
-      </button>
-      }
-      {/* Delete */}
-      { localStorage.getItem('uid')===props.postData.author && <button 
-        type="button"
-        className="btn btn-success btn-sm post-delete-button"
-        data-toggle="modal"
-        data-target={`#deletePostModal${props.postData._id}`}>
-          Delete
-      </button>
-}
-      
+    <div className="col col-md-12 profile-posts-container" id={props.postData._id} onClick={props.setSelectedPost}>
+      <div className="row  align-items-center">
+        <div className="col col-md-9  align-items-center">
+          <Link className="profile-posts-content" to={link}>
+            {props.postData.title}
+          </Link>
+        </div>
+        <div className="col col-md-3  align-items-center">
+          <div class="btn-group" role="group" aria-label="Basic example">
+          <button type="button"
+            className="btn btn-success btn-sm"
+            data-toggle="modal"
+            data-target="#exampleModalPost"
+          >
+            Edit
+          </button>
+          {/* Delete */}
+          <button 
+            type="button"
+            className="btn btn-success btn-sm"
+            data-toggle="modal"
+            data-target="#deletePostModal">
+              Delete
+            </button>
+          </div>
+        </div>
+      </div>
 
       {/* <!-- Edit Post Modal --> */}
       <div
@@ -111,8 +112,6 @@ const Post = props => {
           </div>
         </div>
         </div>
-
-
       <hr />
     </div>
   );
