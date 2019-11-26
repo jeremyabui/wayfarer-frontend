@@ -1,30 +1,15 @@
-.cities-container {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 25px;
-  /* background-image: url("https://images.unsplash.com/photo-1415356838286-df6fd593e8b3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"); */
-}
 
 .cities-explore {
-  display: flex;
-  justify-content: space-around;
-  /* background-image: url("https://images.unsplash.com/photo-1504672281656-e4981d70414b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"); */
   color: aliceblue;
-  height: 0px;
 }
 
 .city-list {
-  min-width: 200px;
-  margin: 100px auto;
-  font-size: 50px;
-  color: aliceblue;
   background: rgba(100, 100, 100, 0.6);
-  text-align: center;
-  padding: 40px;
+  color: aliceblue;
 }
 
-.city-item {
-  margin: 30px auto;
+li {
+ list-style: none;
 }
 
 .city-item:hover {
@@ -33,15 +18,34 @@
 }
 
 .city-detail-name {
-  color: aliceblue;
+  color: black;
 }
 
 .city-detail-description {
-  color: aliceblue;
+  color: black;
 }
+
 .city-detail-image {
-  width: 1000px;
-  height: 500px;
-  overflow: hidden;
+  width: auto;
+  height: 30vh;
+  object-fit: cover;
+}
+
+.explore{
   text-align: center;
+  color: black;
+}
+
+.profile-posts-content{
+color: black;
+font-size: 20px;
+}
+
+
+.myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
 }

@@ -63,8 +63,6 @@ class PostsContainer extends React.Component {
       this.setState({
         posts: [...filtered]
       })
-      // document.getElementsByClassName('modal-backdrop')[0].remove();
-      // document.getElementById(`deletePostModal${postId}`).setAttribute('data-dismiss','modal');
     })
     .catch((err) => console.log(err));
   }
@@ -82,10 +80,14 @@ class PostsContainer extends React.Component {
 
   render() {
     return (
-      <div className="profile-posts-container">
-        {localStorage.getItem('uid') && this.props.cityDetails && <CreatePostForm handleSubmit={this.handleSubmit} cityDetails={this.props.cityDetails} currentUser={this.props.currentUser} /> }
-        {this.displayPosts(this.state.posts)}
+      <>
+      <div className="row">
+         {/* For the profile posts */}
+        {this.displayPosts(this.props.posts)}
+        {/* {this.state.loaded && this.displayPosts(cityPosts)} */}
       </div>
+      </>
+
     )
   }
 }

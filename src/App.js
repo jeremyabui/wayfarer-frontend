@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom';
 // Internal Modules
 import Navbar from './components/Navbar/Navbar';
 import Routes from './config/routes';
+import video2 from "./components/CitiesContainer/assets/gardenVideo.mp4";
 
 // CSS
 import './App.css';
@@ -36,6 +37,9 @@ class App extends Component {
   render () {
     return (
       <>
+       {/* <video autoPlay={true} loop={true} className="myVideo">
+          <source src={video2} type="video/mp4" />
+       </video> */}
         <Navbar currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} logout={this.logout}/>
         <Routes currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} />
       </>

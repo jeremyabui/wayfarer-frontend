@@ -13,6 +13,7 @@ const Post = props => {
   let postId = `${props.postData._id}`
   let postTitle = `${props.postData.title}`
   return (
+    
     <div className="post-container" id={props.postData._id} onClick={props.setSelectedPost}>
       <hr/>
       <Link className="profile-posts-content" to={link}>
@@ -38,8 +39,6 @@ const Post = props => {
           Delete
       </button>
 }
-      
-
       {/* <!-- Edit Post Modal --> */}
       <div
         className="modal fade"
@@ -111,8 +110,6 @@ const Post = props => {
           </div>
         </div>
         </div>
-
-
       <hr />
     </div>
   );

@@ -37,20 +37,14 @@ class CityDetailContainer extends React.Component {
         })
         .catch((err) => console.log(err));
     }
-
-      // if (prevProps.posts !== this.props.posts) {
-      //   this.setState({
-      //     posts: this.props.posts
-      //   })
-      // }
-    }
+  }
   
   render() {
     return (
-      <section className="city-detail-container">
-        <CityDetail cityDetails={this.state.cityDetails} />
+      <div className=" city-detail-container">
+      {this.state.cityDetails && <CityDetail cityDetails={this.state.cityDetails} /> }
         {this.state.cityDetails && <PostsContainer posts={this.state.cityDetails.posts} cityDetails={this.state.cityDetails} currentUser={this.props.currentUser} /> }
-      </section>
+      </div>
     );
   }
 }
