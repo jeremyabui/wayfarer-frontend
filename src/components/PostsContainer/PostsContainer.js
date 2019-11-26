@@ -73,11 +73,19 @@ class PostsContainer extends React.Component {
     return posts.map((post) => {
       return (
         <div className="post" key={post._id}>
-        <Post  postData={post} handlePostEdit={this.handlePostEdit} deletePost={this.deletePost}/>
+        <Post postData={post} handlePostEdit={this.handlePostEdit} deletePost={this.deletePost}/>
         </div>
       )
     })
   };
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.cityDetails !== this.props.cityDetails) {
+      this.setState({
+        posts: this.props.cityDetails.posts
+      })
+    }
+    }
 
 
   render() {

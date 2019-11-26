@@ -30,27 +30,28 @@ class CreatePostForm extends React.Component {
   //     .catch(err => console.log(err));
   // };
 
-  componentDidMount() {
-      this.setState({
-        city: this.props.cityDetails._id
-      })
-    }
-
-  // componentDidUpdate = (prevProps) => {
-  //   if (prevProps.cityDetails !== this.props.cityDetails) {
+  // componentDidMount() {
   //     this.setState({
   //       city: this.props.cityDetails._id
   //     })
   //   }
-  // }
+
+  componentDidUpdate = (prevProps) => {
+    if (prevProps.cityDetails !== this.props.cityDetails) {
+      this.setState({
+        city: this.props.cityDetails._id
+      })
+    }
+  }
   
   render() {
     console.log(this.props.cityDetails);
     return(
       <>
-      
+        <div className="col">
         <button className="nav-item" type="button"
-        id="register" className="nav-link btn-primary" data-toggle="modal" data-target="#createPostForm">Create Post</button>
+        id="register" className="nav-link btn-primary btn-sm" data-toggle="modal" data-target="#createPostForm">Create Post</button>
+        </div>
         <div className="container">
           <div className="modal fade" id="createPostForm" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div className="modal-dialog" role="document">

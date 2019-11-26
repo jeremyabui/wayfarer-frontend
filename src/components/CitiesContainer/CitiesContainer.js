@@ -52,6 +52,7 @@ class CitiesContainer extends React.Component {
           </div>
         </div>
         {/* for sidebar */}
+        <div className="container">
         <div className="row">
           <div className="col col-md-3">
             <div className=" city-list p-5 row-md">
@@ -60,10 +61,11 @@ class CitiesContainer extends React.Component {
               </ul>
             </div>
           </div>
-          <div className=" col-md-9 col">
+          <div className=" col-md-8 col">
             <CityDetailContainer selectedCity={this.state.selectedCity} />
           </div>
         </div>
+      </div>
       </div>
     );
   }

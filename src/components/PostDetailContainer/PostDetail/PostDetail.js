@@ -3,11 +3,11 @@ import React from "react";
 const PostDetail = props => {
   console.log(props);
   return (
-    <>
+    <div className="post-detail container p-5">
       <h3 className="post-detail-title">{props.postDetail.title}</h3>
-      <h4 className="post-detail-author">{props.postDetail.author.username}</h4>
-      <p>{props.postDetail.body}</p>
-    </>
+      <h4 className="post-detail-author">by {props.postDetail.author.username}</h4>
+      <p className="post-detail-body">{props.postDetail.body}</p>
+    </div>
   );
 };
 

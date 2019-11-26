@@ -7,7 +7,7 @@ const CityDetail = props => {
 
   return (
     <>
-    <div className="row">
+    <div className="city-detail-box">
       <div className="col col-md-4">
         <h1 className="city-detail-name">{props.cityDetails.name}</h1>
         <p className="city-detail-description">{props.cityDetails.description}</p>

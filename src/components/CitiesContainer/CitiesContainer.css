@@ -18,16 +18,16 @@ li {
 }
 
 .city-detail-name {
-  color: black;
+  color: white;
 }
 
 .city-detail-description {
-  color: black;
+  color: white;
 }
 
 .city-detail-image {
   width: auto;
-  height: 30vh;
+  height: 50vh;
   object-fit: cover;
 }
 
@@ -48,4 +48,10 @@ font-size: 20px;
   min-width: 100%;
   min-height: 100%;
   z-index: -1;
+}
+
+.city-detail-box {
+  background-color: rgba(104,104,104, 0.9);
+  padding: 2em;
+  margin-bottom: 25px;
 }
