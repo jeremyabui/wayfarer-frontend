@@ -16,12 +16,6 @@ const CityDetail = props => {
         <img className=" city-detail-image " src={props.cityDetails.photo} alt={props.cityDetails.name} />
       </div>
     </div>
-    
-      <div className="row">
-        <div className="col p-5">
-          {props.cityDetails && <CreatePostForm cityDetails={props.cityDetails} />}
-        </div>
-      </div>
     </>
   );
 };

@@ -49,8 +49,8 @@ class CreatePostForm extends React.Component {
     return(
       <>
       
-        <button className="btn btn-primary" type="button"
-        id="register" data-toggle="modal" data-target="#createPostForm">Create Post</button>
+        <button className="nav-item" type="button"
+        id="register" className="nav-link" data-toggle="modal" data-target="#createPostForm">Create Post</button>
         <div className="container">
           <div className="modal fade" id="createPostForm" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div className="modal-dialog" role="document">
